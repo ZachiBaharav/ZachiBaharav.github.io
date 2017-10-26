@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pearls</title>
+
+<script>
+function goBack()
+  {
+  window.history.back();
+  }
+</script>
+
+<style>
+ul.P {
+    list-style-type: none;
+    padding: 15px;
+    margin: 0px;
+}
+<!-- usage
+<ul class="P"> 
+</ul>
+-->
+</style>
+
+</head>
+
+<body>
+<input type="button" value="Back" onclick="goBack()">
+<br>
+
+<h1><p align="center">(Coding) Pearls</h1>
+<h1><p align="center">Programming, Algorithms, Math.</h1>
+
+<br> <br>
+<ul>
+<li><a href="#Pearls Bird">Bird's book</a> : All pearls from <b>"Pearls of Functional Algorithm Design"</b>, by Richard Bird.</li> 
+<li><a href="#Coding Pearls in Haskell">Coding Pearls in Haskell</a>.</li>
+<li><a href="#Coding Pearls in Matlab">Coding Pearls in Matlab</a>.</li>
+<li><a href="#Coding Pearls in Python">Coding Pearls in Python</a>.</li>
+<li><a href="#Project E-u-l-e-r">Project E-u-l-e-r</a></li>
+</ul>
+<br><br>
+
+<h3><a name="Pearls Bird">Bird's book</a></h3>
+<b>"Pearls of Functional Algorithm Design"</b>, by Richard Bird. Cambridge University Press. 2010.
+<br>
+Great book! 
+<br>Inspirational in it's succinct  and clear way of presenting the material. 
+<br>No wonder: It is a collection of some of the pearls published in the 20-years period (1990-2010) in the Journal of Functional 
+Programming.
+<ul>
+<li><b>P1: Smallest free number</b> -- Given a list of natural numbers, find the smallest number NOT in the list, in LINEAR time -- 
+Array -- Easy. 
+<br> -- We go over the list xs, and mark in an auxiliary array the numbers that are between [0..length xs]. Then, finding
+the firsy non-appearing number in this aux-array.
+<br>
+<a href="p1.hs.html" target="_blank">p1.hs.html</a> ,&nbsp
+<a href="p1.hs" target="_blank">p1.hs</a> (opens in new window).</li>
+<br>
+<li><b>P2: Surpassing numbers</b> -- Given a list [a] of (Ord a), for each element define as 'surpasser count' the number of remaining elements to the right
+which are larger than it. Find the maximum surpasser count of a list in O(n*log n) -- 
+Divide and Conquer -- Medium. 
+<br> -- We define data-strucutre (and operations) that will enable us to join (=merge) two sublists in linear time.
+The data base is an ordered list of the elements and their surpasser for each half-list, and then
+the join (of right and left lists) can be done element-by-element in linear time.
+<br>
+<a href="p2.hs.html" target="_blank">p2.hs.html</a> ,&nbsp
+<a href="p2.hs" target="_blank">p2.hs</a>.</li>
+<br>
+
+<li><b>P3: Saddleback search + Binary search goes 2D</b> -- Given f(x,y)-> z over the Natural numbers. f(,) is 
+strictly increasing in both its arguments.
+<br>
+Find all the pairs (x,y) such that f(x,y) = z_0.  -- Medium. 
+<br> -- Brute force is searching in the whole square of (0,0) to (z_0,z_0). Then, Saddleback goes over a 'line', stepping 
+gently from the top-left along a column, and then jumps to the right when needed, and continues to the bottom right. Like 
+going on an iso-line and not loosing height.<br>
+Then, the last method is a simple '2D binary search', in which we do binary search along row (or column), and then 
+'throw-away' two rectangels (top-right and bottom-left). This turns out to be the most efficnet by far!
+<br>
+<a href="p3.hs.html" target="_blank">p3.hs.html</a> ,&nbsp
+<a href="p3.hs" target="_blank">p3.hs</a>.</li>
+<br>
+
+<li><b>
+<a name="P4">P4</a>: Smallest K element in Union of sets</b> -- Given two disjoint sets X and Y, each is sorted. Find the K-smallest element
+in their union. 
+<br>
+Of course, O(K) solution is simple and direct. BUT, we can do it in O(log |X| + log |Y|), by using binary search and
+divide-and-conquer. -- Medium
+<br> -- Brute force is O(K). 5-lines of code. Then, using lists and split/merging according to binary search. Last,
+using arrays rather then lists, which implies just playing with indices rather than creating new lists.
+<br>
+<b>Note</b>: The first (maybe) incosistent-code I noticed in the book. This is in the part of working with 
+array-indices 
+rather than creating sub-lists (Maybe they somehow meant the function to be called from a different place). 
+I left in 
+the code all debugging-printouts to show that in my code, there's perfect 
+agreement between the list and array based solutions. 
+<br>
+<a href="p4.hs.html" target="_blank">p4.hs.html</a> ,&nbsp
+<a href="p4.hs" target="_blank">p4.hs</a>.
+</li>
+<br>
+<li><b>
+<a name="P5">P5</a>: Sorting Pairwise Sums</b> 
+</li><br>
+<li><b>
+<a name="P6">P6</a>: Making a Century</b> -- Given the digits 1..9, list all the ways the operations + and x can be inserted into 
+the sequence so as to make the total sum 100.
+<br>
+For example:
+<br>100 = 12 + 34 + 5x6 +7 + 8 + 9
+<br>100 = 1 + 2x3 + 4 + 5 + 67 + 8 + 9
+<br>
+No parthneses, normal order of operations. -- Easy.
+<br>
+ -- This is a brute-force problem, but the goal of the pearl is to establish some
+general formulation of 'Brute-Force' search, and improve on it with 'little'
+assumptions.
+<br>
+Two main things for brute-force methods:
+<br>
+1. Generating the 'values' while generating the 'candidates', can produce savings (Especially
+if generations of candidates can be 'sequential'). 
+<br>
+2. Reduce 'good' critertia to 'ok', it can help trim the generation of all sequences. 
+<br>
+<a href="p6.hs.html" target="_blank">p6.hs.html</a> ,&nbsp
+<a href="p6.hs" target="_blank">p6.hs</a>.
+<br>
+<b>Note</b>: As of  now, didn't implement the 'ok' shortcut, as right now these ru nso fast anyway. 
+</li>
+<br>
+
+<li><b>P9: Celebrity Clique </b> -- Finding a "Celebrity Clique" in linear time -- Fusion, Graphs -- Hard. 
+<br> -- Interesting problem: It is more efficient to *find* a solution assuming one exists, rather than *check* it is actually
+a solution! 
+<br>
+<a href="p9.hs.html" target="_blank">p9.hs.html</a> ,&nbsp
+<a href="p9.hs" target="_blank">p9.hs</a>.</li>
+<br>
+
+<li><b>P10: Rush Hour Puzzle</b> -- DFS (Depth First Search), BFS (Breadth Frist Search) -- Hard.</li>
+
+</ul> 
+
+<br> <br>
+
+<h3><a name="Coding Pearls in Haskell">Coding Pearls in Haskell</a></h3>
+
+<ol>
+<li> <b>Dijkstra</b> -- Shortest path in a graph (no heuristics). </li>
+<li> <b>Needleman-Wunsch</b> -- Global sequences alignment. </li>
+<li> <b>Smith-Waterman</b> -- Local sequences alignment.</li>
+<br><br>
+<li><b>Clock</b> -- Measuring execution time -- Easy.
+The goal is to time a ceratin function or program. Of course, there's difference between 
+"wall-time" and "CPU time", and whether you want to count IO-Time as well (waiting for File I/O), 
+multi-threads, and so on.
+<ol>
+<li><b>System.CPUTime</b>- Simplest. Coems with Base. 
+<a href="clock1.hs" target="_blank">clock1.hs</a>
+</li>
+<li><b>Clock package</b> - Various options for 'Time' definition. Also using the Formatting package for nicer output.
+<a href="clock2.hs" target="_blank">clock2.hs</a></li>
+<li>Other possible packages : Timeit package, Criterion package. </li>
+</ol>
+
+[0] <a href="http://chrisdone.com/posts/measuring-duration-in-haskell" target="_blank">
+http://chrisdone.com/posts/measuring-duration-in-haskell</a>
+<br>
+[1] <a href="http://rosettacode.org/wiki/Time_a_function#Haskell" target="_blank">
+http://rosettacode.org/wiki/Time_a_function#Haskell</a>
+</li>
+<li>Random number(s).</li>
+<li><b>Formatting: Using Text.Printf</b> - part of Base -- Easy.
+<a href="printf.hs" target="_blank">printf.hs</a>
+<br>
+ -- Others options are available: <a href="https://hackage.haskell.org/package/formatting" target="_blank">Formatting package</a> 
+ (opens in new window)
+</li>
+<li><b>Rooms map</b> -- Creating a room map for an adventure game -- Random, SVG -- Med.
+<a href="roomsSVG.hs" target="_blank">roomsSVG.hs</a>. 
+<br>
+An example result opens in a new tab: <a href="roomsSVG_Output.JPG" target="_blank">roomsSVG_Output.JPG</a>. 
+</li>
+<li><b>foldr and fusion</b> -- Simple example of fusing function on foldr -- Med.
+<br>
+Source code example: <a href="fusion1.hs" target="_blank">fusion1.hs</a>. 
+<br>
+Fusion is the idea of combining (or 'fusing') a few operations together in a manner that
+avoids intemediate data-structures or claculations.
+This is a very common practice in functional programming, where fusion can improve
+dramatically performance.
+<br>
+Basic text-definition of fusion for foldr is:
+" f*foldr g a = foldr h b ",
+Provided f is strict, f a = b, and f (g x y) = h x (f y) for all x and y.
+<br>
+The fusion condition on "f strict" can be relaxed if we just want to use
+" f (foldr g a xs) = foldr h b xs ", for all finite sets xs.
+<br>
+A note about foldr:
+" foldr:: (a->b->b) -> b -> [a] -> b " : 
+Takes the second argument, and the last item of the list, and applies the function. 
+Then, takes the result and the pentumilate element of the list, and repeats.
+<br>
+For a more elaborated example, see the Celebrity Clique pearl (P9) in Bird's book.
+</li>
+<li>
+<b>Triangular numbers</b> -- Fiding all triangular numbers.
+<a href="triWizard.hs" target="_blank">triWizard.hs</a>. 
+</li>
+<li>
+<b><a name="purple"> Purple America</a></b> -- Coloring the US/counties map based on voting.  Full credit for this problem goes to nifty.stanford.edu (see link below).
+Printed from there the problem and slides:
+<a href="Programming Assignment_ Purple America.pdf" target="_blank">assignment</a> and <a href="PurpleAmerica.pdf" target="_blank">slides</a>.
+And here are the files you need to run it:
+<a href="purpleAmerica.hs" target="_blank">purpleAmerica.hs</a>,
+<a href="USA.txt" target="_blank">USA.txt</a>,
+<a href="USA2012.txt" target="_blank">USA2012.txt</a>, and the results:
+<!-- <a href="purpleMap.html.txt" target="_blank">purpleMap.html.txt</a>, or -->
+<a href="purpleUSA.jpg" target="_blank">purpleUSA.jpg</a>.
+<br>The full description is available here:
+<a href="http://nifty.stanford.edu/2014/wayne-purple-america/" target="_blank">http://nifty.stanford.edu/2014/wayne-purple-america/s</a>.
+</li>
+<li>
+<b>Jumble solver</b> -- Given sequence of letters, find if they constitute a word.
+<a href="Jumble.hs" target="_blank">Jumble.hs</a>. Here is also a 
+text file containing all legal words 
+<a href="wordsEn.txt" target="_blank">wordsEn.txt</a>
+</li>
+<li>
+<b>Input from user</b> -- Can be done through command-line-arguments, external file, or 
+simple keyboard.
+<br>-- For command-line-arguments, and file-input, see <a href="Jumble.hs" target="_blank">Jumble.hs</a>
+<br>-- For keyboard, see <a href="userInput.hs" target="_blank">userInput.hs</a>
+</li>
+
+<li>
+<b>Wolf-and-Sheep</b> -- AI game. Pawns .vs. Queen on a chess board. Who has the forced win? (spoiler alert: White).</li>
+
+
+</ol> 
+<br> <br>
+
+<h3><a name="Coding Pearls in Matlab">Coding Pearls in Matlab</a></h3>
+<ol>
+<li>
+<b><a name="IFS"> Fractal Image Coding</a></b> -- Using IFS (Iterated Functions system)
+to encode and decode an image.
+<a href="ifs_encode.m" target="_blank">ifs_encode.m</a> and 
+<a href="ifs_decode.m" target="_blank">ifs_decode.m</a>.
+Sample images to use:
+<a href="lena.png" target="_blank">lena.png</a>, 
+<a href="barbara.png" target="_blank">barbara.png</a>, 
+<a href="baboon.png" target="_blank">baboon.png</a>. 
+</li>
+
+</ol>
+
+<br><br>
+
+<h3><a name="Coding Pearls in Python">Coding Pearls in Python</a></h3>
+<ol>
+<li>
+(see in projects some practical examples)
+</li>
+
+</ol>
+
+
+
+<br><br>
+
+<h3><a name="Project E-u-l-e-r">Project E-u-l-e-r</a></h3>
+Want to make sure I am not a spoiler, so am not linking to the original page and details.
+<br>
+The idea in most is to use some Math to make the coding (and solution) much simpler.
+<ol>
+<li><a name="e1"><b>Problem 1</b></a> -- Find the sum of all the multiples of 3 or 5 below 1000 -- Easy.
+<br><a href="euler1.hs" target="_blank">euler1.hs</a> (opens in new window).</li>
+
+<li><a name="e2"><b>Problem 2</b> -- Fibonacci sequence whose values do not exceed four million, 
+find the sum of the even-valued terms -- Easy. 
+<br> -- Elements of solution: Even valued are every 3rd element; formula for approximating
+the elements (==> No need to calculate); and thus the sum is sum of geometric series.
+<br><a href="euler2.hs" target="_blank">euler2.hs</a>.</li>
+
+<li><a name="e3"><b>Problem 3</b> -- Largest prime factor:
+The prime factors of 13195 are 5, 7, 13 and 29.
+What is the largest prime factor of the number 600851475143 ?
+<br><a href="euler3.hs" target="_blank">euler3.hs</a>.</li>
+
+
+<li><a name="e4"><b>Problem 4</b> -- Largest palindrome product:
+A palindromic number reads the same both ways. The largest palindrome made from the product of 
+two 2-digit numbers is 9009 = 91x99.
+Find the largest palindrome made from the product of two 3-digit numbers.
+<br><a href="euler4.hs" target="_blank">euler4.hs</a>.</li>
+
+
+<li><a name="e5"><b>Problem 5</b> -- Smallest multiple:
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?.
+<br><a href="euler5.hs" target="_blank">euler5.hs</a>.</li>
+
+
+<li><a name="e6"><b>Problem 6</b> -- Sum square difference:
+The sum of the squares of the first ten natural numbers is,
+12 + 22 + ... + 102 = 385.
+The square of the sum of the first ten natural numbers is,
+(1 + 2 + ... + 10)2 = 552 = 3025.
+Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640.
+Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+<br><a href="euler6.hs" target="_blank">euler6.hs</a>.</li>
+
+
+<li><a name="e7"><b>Problem 7</b> -- 10001st prime:
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+What is the 10 001st prime number?
+<br><a href="euler7.hs" target="_blank">euler7.hs</a>.</li>
+
+
+<li><a name="e8"><b>Problem 8</b> -- Largest product in a series:
+The four adjacent digits in the 1000-digit number that have the greatest product are 9*9*8*9=5832.
+Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. 
+What is the value of this product?
+<br><a href="euler8.hs" target="_blank">euler8.hs</a>.</li>
+
+
+<li><a name="e9"><b>Problem 9</b> -- Special Pythagorean triplet: 
+A Pythagorean triplet is a set of three natural numbers, a &lt b &lt c, for which,
+a^2 + b^2 = c^2.
+For example, 3^2 + 4^2 = 5^2.
+There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+Find the product abc.
+<br><a href="euler9.hs" target="_blank">euler9.hs</a>.</li>
+
+
+<li><a name="e10"><b>Problem 10</b> -- Summation of primes: 
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+Find the sum of all the primes below two million.
+<br><a href="euler10.hs" target="_blank">euler10.hs</a>.</li>
+
+
+<li><a name="e11"><b>Problem 11</b> -- Largest product in a grid: 
+In the 20x20 grid below, four numbers along a diagonal line have been marked in red.
+(The diagonal is NW to SE, starting from (7,9). See in the code file.)
+<!--
+<br>
+08 02 22 97 .... <br>
+49 49 99 40 .... <br>
+81 49 31 73 .... <br>
+:  :   :  :  ...  <br>
+-->
+The product of these numbers is 26 x 63 x 78 x 14 = 1788696.
+<br>
+What is the greatest product of four adjacent numbers in the same direction 
+(up, down, left, right, or diagonally) in the 20 x 20 grid?
+<br><a href="euler11.hs" target="_blank">euler11.hs</a>.</li>
+
+
+
+<li><a name="e12"><b>Problem 12</b> -- Highly divisible triangular number: 
+The sequence of triangle numbers is generated by adding the natural numbers. 
+So the 7th triangle number would be 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. 
+The first ten terms would be:
+1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
+
+Let us list the factors of the first seven triangle numbers: (cut). <br>
+<!--
+ 1: 1
+ 3: 1,3
+ 6: 1,2,3,6
+10: 1,2,5,10
+15: 1,3,5,15
+21: 1,3,7,21
+28: 1,2,4,7,14,28
+-->
+We can see that 28 is the first triangle number to have over five divisors.
+What is the value of the first triangle number to have over five hundred divisors?
+
+<br><a href="euler12.hs" target="_blank">euler12.hs</a>.</li>
+
+
+<li><a name="e13"><b>Problem 13</b> -- Large sum: 
+Work out the first ten digits of the sum of the following 
+one-hundred 50-digit numbers.<br>
+37107287533902102798797998220837590246510135740250<br>
+46376937677490009712648124896970078050417018260538<br>
+74324986199524741059474233309513058123726617309629<br>
+and so on.
+<br><a href="euler13.hs" target="_blank">euler13.hs</a>.</li>
+
+
+<li><b>Problem 14</b> -- Longest Collatz sequence:
+The following iterative sequence is defined for the set of positive integers:
+<br>
+n -> n/2 (n is even)<br>
+n -> 3n + 1 (n is odd)<br>
+
+Using the rule above and starting with 13, we generate the following sequence:
+<br>
+13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+<br>
+It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. 
+Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+
+Which starting number, under one million, produces the longest chain?
+<br><a href="euler14.hs" target="_blank">euler14.hs</a>.</li>
+
+<li><b>Problem 15</b> -- Lattice Paths
+Starting in the top left corner of a 2x2 grid, and only being able to move to the right and down, 
+there are exactly 6 routes to the bottom right corner.
+How many such routes are there through a 20x20 grid?
+<br><a href="euler15.hs" target="_blank">euler15.hs</a>.</li>
+
+<li><b>Problem 16</b> -- Power digit sum
+2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+What is the sum of the digits of the number 261000?
+<br><a href="euler16.hs" target="_blank">euler16.hs</a>.</li>
+
+<li><b>Problem 17</b> -- Number letter counts
+If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there 
+are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, 
+how many letters would be used?
+<br>
+NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. 
+The use of "and" when writing out numbers is in compliance with British usage.
+<br><a href="euler17.hs" target="_blank">euler17.hs</a>.</li>
+<li><b>Problem 18</b> -- Maximum path sum I 
+By starting at the top of the triangle below and moving to adjacent numbers on the row below, 
+the maximum total from top to bottom is 23.
+
+<br>3
+<br>7 4
+<br>2 4 6
+<br>8 5 9 3
+<br>
+That is, 3 + 7 + 4 + 9 = 23.
+
+Find the maximum total from top to bottom of the triangle below (in the text file)
+<br>
+NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. 
+However, Problem 67, is the same challenge with a triangle containing one-hundred rows; 
+it cannot be solved by brute force, and requires a clever method! ;o)
+<br><a href="euler18.hs" target="_blank">euler18.hs</a>. <a href="euler18.txt" target="_blank">euler18.txt</a>.</li>
+<li><b>Problem 19</b></li>
+<li><b>Problem 20</b></li>
+<li><b>Problem 21</b></li>
+
+<li><a name="e22"><b>Problem 22</b></a>
+ -- Names scores:
+Using names.txt (right click and 'Save Link/Target As...'), a 46K text file containing over 
+five-thousand first names, begin by sorting it into alphabetical order. 
+Then working out the alphabetical value for each name, multiply this 
+value by its alphabetical position in the list to obtain a name score.
+For example, when the list is sorted into alphabetical order, COLIN, which is worth 
+3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. 
+So, COLIN would obtain a score of 938 × 53 = 49714.
+What is the total of all the name scores in the file?
+<br><a href="euler22.hs" target="_blank">euler22.hs</a>
+
+<li><b>Problem 23</b></li>
+<li><b>Problem 24</b></li>
+<li><a name="e25"><b>Problem 25</b></a>
+ -- 1000-digit Fibonacci number:
+The Fibonacci sequence is defined by the recurrence relation:
+Fn = Fn-1 + Fn-2, where F1 = 1 and F2 = 1.
+The 12th term, F12, is the first term to contain three digits.
+(the 7th is the first with 2 digits).
+What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
+<br><a href="euler25.hs" target="_blank">euler25.hs</a>
+</li>
+<li><b>Problem 26</b></li>
+<li><b>Problem 27</b></li>
+<li><a name="e28"><b>Problem 28</b></a>
+ -- Number spiral diagonals
+Starting with the number 1 and moving to the 
+right in a clockwise direction a 5 by 5 spiral is formed as follows (see in the code file).
+<!--
+<br>
+21 22 23 24 25<br>
+20  7  8  9 10<br>
+19  6  1  2 11<br>
+18  5  4  3 12<br>
+17 16 15 14 13<br>
+<br>
+-->
+It can be verified that the sum of the numbers on the diagonals is 101.
+<br>
+What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed 
+in the same way?
+ -- Easy.
+<br><a href="euler28.hs" target="_blank">euler28.hs</a>. 
+</li>
+
+<li><b>Problem 29</b></li>
+<li><b>Problem 30</b></li>
+
+
+<li><a name="e206"><b>Problem 206</b> -- Concealed Square: Find the unique positive integer whose square has the form 
+1_2_3_4_5_6_7_8_9_0, where each “_” is a single digit:
+<br> -- This can be solved by brute-force: Squaring on the numbers up to ... . You can 'jump' in 30 steps.
+<br>Just to make it more interesting, I solved it using Depth First Search, in two ways:
+<br><a href="euler206_a.hs" target="_blank">euler206_a.hs</a> (DFS pattern design) ; <a href="euler206.hs" target="_blank">euler206.hs</a> (Just DFS).
+</li>
+
+<li><a name="e493"><b>Problem 493</b> -- Combinatorics:
+70 colored balls are placed in an urn, 10 for each of the seven rainbow colors.
+What is the expected number of distinct colors in 20 randomly picked balls?
+<br> -- The idea is to do some calculation by hands of the related combinatorics, and then computer the resulting expression.
+It turns out that for this one, there is a very easy way to calculate by hand, so a calculator is enough.
+<br><a href="euler493.hs" target="_blank">euler493.hs</a>.</li>
+
+
+<li><a name="e504"><b>Problem 504</b> -- Square on the Inside:
+Let ABCD be a quadrilateral whose vertices are lattice points lying on the coordinate axes as follows:
+<br>
+A(a, 0), B(0, b), C(-c, 0), D(0, -d), where 1 = a, b, c, d = m and a, b, c, d, m are integers.
+<br>
+It can be shown that for m = 4 there are exactly 256 valid ways to construct ABCD. 
+Of these 256 quadrilaterals, 42 of them strictly contain a square number of lattice points.
+<br>
+How many quadrilaterals ABCD strictly contain a square number of lattice points for m = 100?
+ -- Easy if you know the theorem.
+<br> -- Pick's theorem. Also did some  memoization.
+<br><a href="euler504.hs" target="_blank">euler504.hs</a>.
+</li>
+
+<li><a name="e510"><b>Problem 510</b> -- Tangent Circles:
+Circles A and B are tangent to each other and to line L at three distinct points.
+Circle C is inside the space between A, B and L, and tangent to all three.
+Let rA, rB and rC be the radii of A, B and C respectively.
+
+Let S(n) = S rA + rB + rC, for 0 &lt rA = rB = n where rA, rB and rC are integers.
+The only solution for 0 &lt rA = rB = 5 is rA = 4, rB = 4 and rC = 1, so S(5) = 4 + 4 + 1 = 9.
+You are also given S(100) = 3072.
+<br>
+Find S(10^9). -- Easy math. Running time is tricky!
+<br> -- Writing the equations gives you relations between rA, rB, and rC. And for all to be integers,
+one only need to go over the enumeration.
+<br><a href="euler510.hs" target="_blank">euler510.hs</a>.
+</li>
+
+</ol>
+
+<br><br>
+<hr noshade size=4 width="70%" align=left>
+Questions/Comments: Zachi at Baharav dot Org .
+<br><br>
+</body>
+
+</html>

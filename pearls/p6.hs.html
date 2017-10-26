@@ -1,0 +1,837 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0056)file:///C:/Users/Zachi/appdata/local/temp/tmpsoovdq.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>p6.hs</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<style type="text/css">
+/* General */
+* html a:hover { background: transparent; }
+body { color: #000000; }
+pre { border: 0; margin: 0; padding: 0; }
+td { padding: 0; }
+table { border: 0; margin: 0; padding: 0; border-collapse: collapse; empty-cells: show; }
+.code_text { font: 13pt "Consolas", "Courier", Monospace; }
+.code_page { background-color: #FFFFFF; }
+.simple_code_page { background-color: white; color: black }
+.code_gutter { display: table-cell; background-color: #E5E5E5; padding-right: 10px; }
+td.code_line div { width: 100%; }
+span { display: inline-block; border: 0; margin: 0; }
+span.bold { font-weight: bold; }
+span.italic { font-style: italic; }
+span.normal { font-style: normal; }
+span.underline { text-decoration:underline; }
+
+/* Wrapping */
+div.wrap {
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP printers */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word;      /* IE */
+}
+div.wrap span { display: inline; }
+
+/* Toolbar */
+div#toolbarhide {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+div#toolbar {
+    visibility: hidden;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    -webkit-transform: translateZ(0);    /* webkit flicker fix */
+    -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+    -webkit-transition: all .25s ease-in;
+    -moz-transition: all .25s ease-in;
+    -ms-transition: all .25s ease-in;
+    -o-transition: all .25s ease-in;
+    transition: all .25s ease-in;
+    background-color:black;
+    color: white;
+}
+div#toolbarhide:hover div#toolbar {
+    visibility: visible;
+    opacity: .8;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+
+div#toolbar img {
+    display:  inline-block ;
+    vertical-align: middle;
+    border: 0;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    padding: 5px;
+}
+
+/* tooltips */
+#tooltip {
+    border-radius: 5px 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP printers */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word;      /* IE */
+    position:absolute; display:block;
+    color: black;
+    padding: 0.8em 1em;
+    background: #FFFFE0; border: solid black;
+    font-family: Calibri, Tahoma, Geneva, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+a.annotation {
+    color: #000000;
+    outline: none;
+    text-decoration: underline;
+}
+
+span.annotation{ display: inline; }
+
+.tooltip_hotspot { cursor:pointer; }
+
+/* Annotation Table */
+div#comment_list {
+    visibility: hidden;
+    display: none;
+    margin: auto auto;
+    text-align: center;
+    position: fixed;
+    z-index: 99;
+    left:0px;
+    top: 0px;
+}
+div#comment_wrapper {
+    max-height: 200px;
+    overflow: auto;
+    border: solid black;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+}
+table#comment_table {
+    border: thin solid; border-collapse: collapse;
+    color: #000000; background-color: #FFFFE0; margin: auto auto;
+}
+div.table_footer { text-align:right; font-size: 8pt; font-weight: bold;}
+a.table_close { color: black; float: right; }
+a.table_close:link { text-decoration: none; }
+a.table_close:active { text-decoration: none; }
+a.table_close:visited { text-decoration: none; }
+a.table_close:hover { text-decoration: none; }
+table#comment_table th, table#comment_table td { border: thin solid; padding: 5px; }
+td.annotation_link { width: 60px; text-align: right; padding-right: 20px; }
+.annotation_comment { width: 500px; }
+div.annotation_comment {
+    float: left;
+    text-align: left;
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP printers */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word;      /* IE */
+}
+
+</style>
+
+<script type="text/javascript">
+/*jshint globalstrict: true*/
+"use strict";
+
+var plist = {
+    color_scheme: {},
+    content: "",
+    indentlevel: 0,
+
+    get: function(file_name) {
+        this.content = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+                        '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n' +
+                        '<plist version="1.0">\n' +
+                        '<!-- ' + file_name + ' -->\n';
+        this.parsedict(this.color_scheme);
+        this.content += '</plist>\n';
+        return this.content;
+    },
+
+    isinstance: function(obj, s) {
+        return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase() === s;
+    },
+
+    sortkeys: function(obj) {
+        var sorted = {},
+            keys = [],
+            key;
+
+        for (key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                keys.push(key);
+            }
+        }
+        keys.sort();
+        return keys;
+    },
+
+    indent: function() {
+        var i;
+        for (i = 0; i < this.indentlevel; i++) {
+            this.content += "    ";
+        }
+    },
+
+    parsekey: function(k) {
+        this.indent();
+        this.content += '<key>' + k + '</key>\n';
+    },
+
+    parseitem: function(obj) {
+        if (this.isinstance(obj, "string")) {
+            this.parsestring(obj);
+        } else if (this.isinstance(obj, "array")) {
+            this.parsearray(obj);
+        } else if (this.isinstance(obj, "object")) {
+            this.parsedict(obj);
+        }
+    },
+
+    parsearray: function(obj) {
+        var i, len = obj.length;
+        this.indent();
+        this.content += '<array>\n';
+        this.indentlevel++;
+        for (i = 0; i < len; i++) {
+            this.parseitem(obj[i]);
+        }
+        this.indentlevel--;
+        this.indent();
+        this.content += '</array>\n';
+    },
+
+    parsestring: function(s) {
+        this.indent();
+        this.content += '<string>' + s + '</string>\n';
+    },
+
+    parsedict: function(obj) {
+        var keys = this.sortkeys(obj),
+            len = keys.length,
+            k, i;
+
+        this.indent();
+        this.content += '<dict>\n';
+        this.indentlevel++;
+        for (i = 0; i < len; i++)
+        {
+            k = keys[i];
+            this.parsekey(k);
+            this.parseitem(obj[k]);
+        }
+        this.indentlevel--;
+        this.indent();
+        this.content += '</dict>\n';
+    }
+},
+
+escape_html = {
+    safe_chars: {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': '&quot;',
+        "'": '&#39;',
+        "/": '&#x2F;'
+    },
+    escape: function (s) {
+        return String(s).replace(/[&<>"'\/]/g, function (c) {return escape_html.safe_chars[c];});
+    }
+};
+
+function extract_theme(name) {
+    var text, wnd, doc,
+        a = document.createElement('a');
+    window.URL = window.URL || window.webkitURL;
+
+    if (window.Blob != null && a.download != null) {
+        text = new Blob([plist.get(name)], {'type':'application/octet-stream'});
+        a.href = window.URL.createObjectURL(text);
+        a.download = name;
+        a.click();
+    } else {
+        text = '<pre>' + escape_html.escape(plist.get(name)) + '</pre>',
+        wnd  = window.open('', '_blank', "status=1,toolbar=0,scrollbars=1"),
+        doc  = wnd.document;
+        doc.write(text);
+        doc.close();
+        wnd.focus();
+    }
+}
+
+plist.color_scheme = {
+    "name": "Print Color",
+    "settings": [
+        {
+            "settings": {
+                "activeGuide": "#34A7BD",
+                "background": "#FFFFFF",
+                "bracketContentsForeground": "#F8F8F2A5",
+                "bracketContentsOptions": "underline",
+                "bracketsForeground": "#F8F8F2A5",
+                "bracketsOptions": "underline",
+                "caret": "#000000",
+                "findHighlight": "#FFE792",
+                "findHighlightForeground": "#000000",
+                "foreground": "#000000",
+                "gutter": "#E5E5E5",
+                "gutterForeground": "#858585",
+                "inactiveSelection": "#9D550FAA",
+                "inactiveSelectionForeground": "#6ac4d6",
+                "invisibles": "#3B3A32",
+                "lineHighlight": "#2E2E2E22",
+                "selection": "#34A7BD",
+                "selectionForeground": "#FFFFFF",
+                "tagsOptions": "stippled_underline"
+            }
+        },
+        {
+            "name": "Comment",
+            "scope": "comment",
+            "settings": {
+                "foreground": "#A5A5A5"
+            }
+        },
+        {
+            "name": "String",
+            "scope": "string",
+            "settings": {
+                "foreground": "#8F8634"
+            }
+        },
+        {
+            "name": "Number",
+            "scope": "constant.numeric",
+            "settings": {
+                "foreground": "#7C4FCD"
+            }
+        },
+        {
+            "name": "Built-in constant",
+            "scope": "constant.language",
+            "settings": {
+                "foreground": "#7C4FCD"
+            }
+        },
+        {
+            "name": "User-defined constant",
+            "scope": "constant.character, constant.other",
+            "settings": {
+                "foreground": "#7C4FCD"
+            }
+        },
+        {
+            "name": "Variable",
+            "scope": "variable",
+            "settings": {
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Keyword",
+            "scope": "keyword",
+            "settings": {
+                "foreground": "#C70040"
+            }
+        },
+        {
+            "name": "Storage",
+            "scope": "storage",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#C70040"
+            }
+        },
+        {
+            "name": "Storage type",
+            "scope": "storage.type",
+            "settings": {
+                "fontStyle": "italic",
+                "foreground": "#34A7BD"
+            }
+        },
+        {
+            "name": "Class name",
+            "scope": "entity.name.class",
+            "settings": {
+                "fontStyle": "underline",
+                "foreground": "#427E00"
+            }
+        },
+        {
+            "name": "Inherited class",
+            "scope": "entity.other.inherited-class",
+            "settings": {
+                "fontStyle": "italic underline",
+                "foreground": "#427E00"
+            }
+        },
+        {
+            "name": "Function name",
+            "scope": "entity.name.function",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#427E00"
+            }
+        },
+        {
+            "name": "Function argument",
+            "scope": "variable.parameter",
+            "settings": {
+                "fontStyle": "italic",
+                "foreground": "#CB6500"
+            }
+        },
+        {
+            "name": "Tag name",
+            "scope": "entity.name.tag",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#C70040"
+            }
+        },
+        {
+            "name": "Tag attribute",
+            "scope": "entity.other.attribute-name",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#427E00"
+            }
+        },
+        {
+            "name": "Library function",
+            "scope": "support.function",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#34A7BD"
+            }
+        },
+        {
+            "name": "Library constant",
+            "scope": "support.constant",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#34A7BD"
+            }
+        },
+        {
+            "name": "Library class/type",
+            "scope": "support.type, support.class",
+            "settings": {
+                "fontStyle": "italic",
+                "foreground": "#34A7BD"
+            }
+        },
+        {
+            "name": "Library variable",
+            "scope": "support.other.variable",
+            "settings": {
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "settings": {
+                "background": "#C70040",
+                "fontStyle": "",
+                "foreground": "#F8F8F0"
+            }
+        },
+        {
+            "name": "Invalid deprecated",
+            "scope": "invalid.deprecated",
+            "settings": {
+                "background": "#7C4FCD",
+                "foreground": "#F8F8F0"
+            }
+        },
+        {
+            "name": "JSON String",
+            "scope": "meta.structure.dictionary.json string.quoted.double.json",
+            "settings": {
+                "foreground": "#8F8634"
+            }
+        },
+        {
+            "name": "diff.deleted",
+            "scope": "markup.deleted",
+            "settings": {
+                "foreground": "#C70040"
+            }
+        },
+        {
+            "name": "diff.inserted",
+            "scope": "markup.inserted",
+            "settings": {
+                "foreground": "#427E00"
+            }
+        },
+        {
+            "name": "diff.changed",
+            "scope": "markup.changed",
+            "settings": {
+                "foreground": "#8F8634"
+            }
+        }
+    ],
+    "uuid": "22808317-0a5a-4b87-baea-5aeee17bf295"
+};
+
+function dump_theme() {
+    extract_theme('Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme');
+}
+</script>
+
+</head>
+<body class="code_page code_text"><pre class="code_page"><table cellspacing="0" cellpadding="0" class="code_page"><tbody><tr><td colspan="2" style="background: #FFFFFF"><div id="file_info"><span style="color: #000000">
+</span></div></td></tr><tr><td><table cellspacing="0" cellpadding="0" class="code_page"><tbody><tr><td valign="top" id="L_0_1" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;&nbsp;1&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_1"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">{-</span>
+</div></td></tr><tr><td valign="top" id="L_0_2" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;&nbsp;2&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_2"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_3" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;&nbsp;3&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_3"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">Pearl 6: Making a century</span>
+</div></td></tr><tr><td valign="top" id="L_0_4" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;&nbsp;4&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_4"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_5" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;&nbsp;5&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_5"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">Problem:</span>
+</div></td></tr><tr><td valign="top" id="L_0_6" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;&nbsp;6&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_6"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">Given the digits 1..9, list all the ways the operations + and x can be inserted into </span>
+</div></td></tr><tr><td valign="top" id="L_0_7" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;&nbsp;7&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_7"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">the sequence so as to make the total sum 100.</span>
+</div></td></tr><tr><td valign="top" id="L_0_8" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;&nbsp;8&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_8"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">For example:</span>
+</div></td></tr><tr><td valign="top" id="L_0_9" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;&nbsp;9&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_9"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">100 = 12 + 34 + 5x6 +7 + 8 + 9</span>
+</div></td></tr><tr><td valign="top" id="L_0_10" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;10&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_10"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">100 = 1 + 2x3 + 4 + 5 + 67 + 8 + 9</span>
+</div></td></tr><tr><td valign="top" id="L_0_11" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;11&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_11"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_12" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;12&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_12"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">No parthneses, normal order of operations.</span>
+</div></td></tr><tr><td valign="top" id="L_0_13" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;13&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_13"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_14" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;14&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_14"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">Solution:</span>
+</div></td></tr><tr><td valign="top" id="L_0_15" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;15&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_15"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">This is a brute-force problem, but the goal of the pearl is to establish some</span>
+</div></td></tr><tr><td valign="top" id="L_0_16" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;16&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_16"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">general formulation of 'Brute-Force' search, and improve on it with 'little'</span>
+</div></td></tr><tr><td valign="top" id="L_0_17" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;17&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_17"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">assumptions.</span>
+</div></td></tr><tr><td valign="top" id="L_0_18" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;18&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_18"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_19" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;19&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_19"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">Two main things for brute-force methods:</span>
+</div></td></tr><tr><td valign="top" id="L_0_20" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;20&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_20"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">1. Generating the 'values' while generating the 'candidates', can produce savings (Especially</span>
+</div></td></tr><tr><td valign="top" id="L_0_21" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;21&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_21"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">if generations of candidates can be 'sequential'). </span>
+</div></td></tr><tr><td valign="top" id="L_0_22" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;22&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_22"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">2. Reduce 'good' critertia to 'ok', it can help trim the generation of all sequences.</span>
+</div></td></tr><tr><td valign="top" id="L_0_23" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;23&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_23"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_24" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;24&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_24"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">-}</span>
+</div></td></tr><tr><td valign="top" id="L_0_25" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;25&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_25"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_26" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;26&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_26"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> You CAN skip all the general formulation description and go to ======</span>
+</div></td></tr><tr><td valign="top" id="L_0_27" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;27&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_27"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_28" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;28&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_28"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> General formulation:</span>
+</div></td></tr><tr><td valign="top" id="L_0_29" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;29&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_29"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> candidates&nbsp;&nbsp;&nbsp; :: Data -&gt; [Candidate]</span>
+</div></td></tr><tr><td valign="top" id="L_0_30" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;30&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_30"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :: Candidate -&gt; Value</span>
+</div></td></tr><tr><td valign="top" id="L_0_31" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;31&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_31"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :: Value -&gt; Bool</span>
+</div></td></tr><tr><td valign="top" id="L_0_32" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;32&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_32"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_33" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;33&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_33"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Brute force search over all candidates</span>
+</div></td></tr><tr><td valign="top" id="L_0_34" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;34&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_34"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> solutions&nbsp;&nbsp;&nbsp;&nbsp; :: Data -&gt; [Candidate]</span>
+</div></td></tr><tr><td valign="top" id="L_0_35" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;35&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_35"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> solutions&nbsp;&nbsp;&nbsp; =&nbsp; filter (good.value).candidates&nbsp;&nbsp;&nbsp; </span>
+</div></td></tr><tr><td valign="top" id="L_0_36" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;36&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_36"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_37" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;37&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_37"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Now, using a few assumptions we can modify thigns:</span>
+</div></td></tr><tr><td valign="top" id="L_0_38" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;38&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_38"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_39" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;39&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_39"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Assumption 1: This will allow us to fuse operations.</span>
+</div></td></tr><tr><td valign="top" id="L_0_40" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;40&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_40"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span>
+</div></td></tr><tr><td valign="top" id="L_0_41" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;41&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_41"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Data is a list of values, [Datum], and candidates takes the form</span>
+</div></td></tr><tr><td valign="top" id="L_0_42" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;42&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_42"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> candidates :: [Datum] -&gt; [Candidate]</span>
+</div></td></tr><tr><td valign="top" id="L_0_43" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;43&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_43"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> candidates =&nbsp; foldr extend []</span>
+</div></td></tr><tr><td valign="top" id="L_0_44" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;44&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_44"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> where</span>
+</div></td></tr><tr><td valign="top" id="L_0_45" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;45&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_45"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> extend :: Datum -&gt; [Candidate] -&gt; [Candidate]</span>
+</div></td></tr><tr><td valign="top" id="L_0_46" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;46&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_46"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span>
+</div></td></tr><tr><td valign="top" id="L_0_47" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;47&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_47"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span>
+</div></td></tr><tr><td valign="top" id="L_0_48" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;48&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_48"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Assumption 2: This will allow us to extend search only as needed.</span>
+</div></td></tr><tr><td valign="top" id="L_0_49" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;49&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_49"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> </span>
+</div></td></tr><tr><td valign="top" id="L_0_50" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;50&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_50"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.a There is a predicate 'ok', such that every good value is necesserialy 'ok'</span>
+</div></td></tr><tr><td valign="top" id="L_0_51" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;51&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_51"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.b candidates with 'ok' values are the extension of candidates with 'ok' value.</span>
+</div></td></tr><tr><td valign="top" id="L_0_52" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;52&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_52"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span>
+</div></td></tr><tr><td valign="top" id="L_0_53" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;53&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_53"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Assumption 3: This will save us computing 'value' of candidate</span>
+</div></td></tr><tr><td valign="top" id="L_0_54" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;54&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_54"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span>
+</div></td></tr><tr><td valign="top" id="L_0_55" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;55&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_55"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;&nbsp; map value.extend x = modify x.map value</span>
+</div></td></tr><tr><td valign="top" id="L_0_56" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;56&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_56"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp; The values of an extended set can be computed from the values of which the extension was</span>
+</div></td></tr><tr><td valign="top" id="L_0_57" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;57&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_57"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp; built from.</span>
+</div></td></tr><tr><td valign="top" id="L_0_58" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;58&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_58"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span>
+</div></td></tr><tr><td valign="top" id="L_0_59" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;59&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_59"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp; We then introduce a few operations on 'fork', 'cross', and relates these</span>
+</div></td></tr><tr><td valign="top" id="L_0_60" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;60&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_60"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> to zip and unzip.</span>
+</div></td></tr><tr><td valign="top" id="L_0_61" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;61&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_61"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;&nbsp; fork (f,g) x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; (f x, g x)</span>
+</div></td></tr><tr><td valign="top" id="L_0_62" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;62&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_62"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;&nbsp; cross (f,g) (x,y)&nbsp;&nbsp;&nbsp;&nbsp; = (f x, g y)</span>
+</div></td></tr><tr><td valign="top" id="L_0_63" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;63&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_63"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span>
+</div></td></tr><tr><td valign="top" id="L_0_64" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;64&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_64"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> and we get:</span>
+</div></td></tr><tr><td valign="top" id="L_0_65" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;65&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_65"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_66" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;66&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_66"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> solutions&nbsp;&nbsp;&nbsp;&nbsp; ::&nbsp;&nbsp;&nbsp;&nbsp; Data -&gt; [Candidate]</span>
+</div></td></tr><tr><td valign="top" id="L_0_67" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;67&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_67"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> solutions&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp;&nbsp;&nbsp; map fst.filter (good.snd).foldr expand []</span>
+</div></td></tr><tr><td valign="top" id="L_0_68" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;68&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_68"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_69" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;69&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_69"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> expand x&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp;&nbsp;&nbsp; filter (ok.snd).zip.cross (extend x, modify x).unzip</span>
+</div></td></tr><tr><td valign="top" id="L_0_70" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;70&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_70"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_71" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;71&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_71"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">module</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">P</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">6 </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">where</span>
+</div></td></tr><tr><td valign="top" id="L_0_72" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;72&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_72"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_73" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;73&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_73"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">import</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">Data.List</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">(</span><span class="normal real_text" style="background-color: #FFFFFF; color: #427E00;">intercalate</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">)</span>
+</div></td></tr><tr><td valign="top" id="L_0_74" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;74&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_74"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_75" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;75&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_75"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> ================================================</span>
+</div></td></tr><tr><td valign="top" id="L_0_76" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;76&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_76"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_77" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;77&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_77"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_78" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;78&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_78"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_79" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;79&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_79"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> So all the above was general design-framework.</span>
+</div></td></tr><tr><td valign="top" id="L_0_80" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;80&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_80"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> now, to the specific problem (creating 100)</span>
+</div></td></tr><tr><td valign="top" id="L_0_81" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;81&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_81"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_82" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;82&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_82"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Expression&nbsp;&nbsp;&nbsp;&nbsp; = sum of terms</span>
+</div></td></tr><tr><td valign="top" id="L_0_83" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;83&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_83"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Term&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = products of factors</span>
+</div></td></tr><tr><td valign="top" id="L_0_84" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;84&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_84"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Factor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = sequence of digits</span>
+</div></td></tr><tr><td valign="top" id="L_0_85" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;85&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_85"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_86" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;86&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_86"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Candidate solution are expressions built from + and x</span>
+</div></td></tr><tr><td valign="top" id="L_0_87" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;87&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_87"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Remember: No parnthesis etc, and simple prioity.</span>
+</div></td></tr><tr><td valign="top" id="L_0_88" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;88&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_88"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">type</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">Expression</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [</span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">Term</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">]&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Each expression is the sum of Terms</span>
+</div></td></tr><tr><td valign="top" id="L_0_89" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;89&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_89"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">type</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">Term</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [</span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">Factor</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">]&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Each term is the product of factors</span>
+</div></td></tr><tr><td valign="top" id="L_0_90" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;90&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_90"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">type</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">Factor</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [</span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">Digit</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">]&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Each factor is list of digits</span>
+</div></td></tr><tr><td valign="top" id="L_0_91" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;91&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_91"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">type</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">Digit</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">Int</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span>
+</div></td></tr><tr><td valign="top" id="L_0_92" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;92&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_92"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_93" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;93&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_93"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_94" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;94&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_94"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Just computing the value:</span>
+</div></td></tr><tr><td valign="top" id="L_0_95" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;95&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_95"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #427E00;">valExpr</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">::</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Expression</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Int</span>
+</div></td></tr><tr><td valign="top" id="L_0_96" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;96&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_96"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">valExpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">sum</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">.</span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">map</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> valTerm </span>
+</div></td></tr><tr><td valign="top" id="L_0_97" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;97&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_97"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">valTerm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">product</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">.</span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">map</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> valFact </span>
+</div></td></tr><tr><td valign="top" id="L_0_98" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;98&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_98"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">valFact&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">foldl</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> (</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">\</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">n d </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">10</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">*n</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">+</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">d)&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">0</span>
+</div></td></tr><tr><td valign="top" id="L_0_99" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;&nbsp;99&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_99"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_100" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;100&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_100"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_101" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;101&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_101"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #427E00;">good</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">::</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Int</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Bool</span>
+</div></td></tr><tr><td valign="top" id="L_0_102" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;102&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_102"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">good v&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp; (v</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">==</span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">100</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">)</span>
+</div></td></tr><tr><td valign="top" id="L_0_103" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;103&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_103"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_104" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;104&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_104"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #427E00;">ok</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">::</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Int</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Bool</span>
+</div></td></tr><tr><td valign="top" id="L_0_105" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;105&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_105"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">ok v&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp; (v</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">&lt;=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">100</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">)</span>
+</div></td></tr><tr><td valign="top" id="L_0_106" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;106&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_106"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_107" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;107&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_107"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Creating all possible expressions</span>
+</div></td></tr><tr><td valign="top" id="L_0_108" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;108&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_108"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> They mention there is a function 'partitions', but never spell it out.</span>
+</div></td></tr><tr><td valign="top" id="L_0_109" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;109&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_109"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> so here it is, even though we will NOT use it!</span>
+</div></td></tr><tr><td valign="top" id="L_0_110" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;110&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_110"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #427E00;">partitions</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">::</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [</span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Digit</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">] </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [[[</span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Digit</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">]]]</span>
+</div></td></tr><tr><td valign="top" id="L_0_111" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;111&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_111"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">partitions </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">[]</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [</span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">[]</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">]</span>
+</div></td></tr><tr><td valign="top" id="L_0_112" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;112&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_112"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">partitions (x</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xs) </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [[x]</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">p </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">|</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> p </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">&lt;-</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> partitions xs]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> x is a prt of it's own</span>
+</div></td></tr><tr><td valign="top" id="L_0_113" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;113&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_113"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">++</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [(x</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">ys)</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">yss </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">|</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> (ys</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">yss) </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">&lt;-</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> partitions xs]&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> x is with the next ones</span>
+</div></td></tr><tr><td valign="top" id="L_0_114" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;114&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_114"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_115" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;115&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_115"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> A difffernet way</span>
+</div></td></tr><tr><td valign="top" id="L_0_116" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;116&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_116"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">expressions xs </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">foldr</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> extend </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">[]</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> xs</span>
+</div></td></tr><tr><td valign="top" id="L_0_117" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;117&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_117"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_118" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;118&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_118"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #427E00;">extend</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">::</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Digit</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [</span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Expression</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">] </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [</span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Expression</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">]</span>
+</div></td></tr><tr><td valign="top" id="L_0_119" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;119&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_119"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">extend x </span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">[]</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; [[[[x]]]]</span>
+</div></td></tr><tr><td valign="top" id="L_0_120" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;120&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_120"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">extend x es&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">concatMap</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> (glue x) es</span>
+</div></td></tr><tr><td valign="top" id="L_0_121" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;121&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_121"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_122" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;122&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_122"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> glue: Each new digit can be added in one of 3-different ways to the expression:</span>
+</div></td></tr><tr><td valign="top" id="L_0_123" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;123&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_123"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> as a digit; as factor (multiplication); or as a term ==&gt; 3 options.</span>
+</div></td></tr><tr><td valign="top" id="L_0_124" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;124&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_124"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> BTW, this shows the number of possible expressions is 3^(n-1) </span>
+</div></td></tr><tr><td valign="top" id="L_0_125" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;125&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_125"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #427E00;">glue</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">::</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Digit</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Expression</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> [</span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Expression</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">]</span>
+</div></td></tr><tr><td valign="top" id="L_0_126" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;126&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_126"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">glue x ((xs</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xss)</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xsss)&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp; [((x</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xs)</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xss)</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xsss</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">,</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> digit</span>
+</div></td></tr><tr><td valign="top" id="L_0_127" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;127&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_127"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ([x]</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xs</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xss)</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xsss</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">,</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> factor</span>
+</div></td></tr><tr><td valign="top" id="L_0_128" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;128&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_128"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [[x]]</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">(xs</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xss)</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">:</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">xsss]&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> term</span>
+</div></td></tr><tr><td valign="top" id="L_0_129" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;129&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_129"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_130" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;130&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_130"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_131" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;131&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_131"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> Main</span>
+</div></td></tr><tr><td valign="top" id="L_0_132" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;132&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_132"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_133" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;133&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_133"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">main </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">do</span>
+</div></td></tr><tr><td valign="top" id="L_0_134" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;134&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_134"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> putStr "Testing partitions: "</span>
+</div></td></tr><tr><td valign="top" id="L_0_135" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;135&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_135"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> print $ partitions [1..4]</span>
+</div></td></tr><tr><td valign="top" id="L_0_136" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;136&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_136"><span class="normal" style="background-color: #FFFFFF; color: #A5A5A5;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_137" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;137&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_137"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">putStrLn</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">"</span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">Brute force : </span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">"</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span>
+</div></td></tr><tr><td valign="top" id="L_0_138" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;138&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_138"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">let</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> res </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">filter</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> (good</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">.</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">valExpr) </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">$</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> expressions [</span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">1</span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">..</span><span class="normal real_text" style="background-color: #FFFFFF; color: #7C4FCD;">9</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">]</span>
+</div></td></tr><tr><td valign="top" id="L_0_139" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;139&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_139"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">print res </span>
+</div></td></tr><tr><td valign="top" id="L_0_140" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;140&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_140"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp; prettyPrint res</span>
+</div></td></tr><tr><td valign="top" id="L_0_141" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;141&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_141"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_142" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;142&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_142"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_143" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;143&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_143"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;">--</span><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"> pretty</span>
+</div></td></tr><tr><td valign="top" id="L_0_144" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;144&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_144"><span class="normal real_text" style="background-color: #FFFFFF; color: #A5A5A5;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">prettyPrint es&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">putStr</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">$</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">unlines</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">$</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">map</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> printExpression es </span>
+</div></td></tr><tr><td valign="top" id="L_0_145" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;145&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_145"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_146" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;146&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_146"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #427E00;">printExpression</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">::</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp; </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">Expression</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">-&gt;</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="italic real_text" style="background-color: #FFFFFF; color: #34A7BD;">String</span>
+</div></td></tr><tr><td valign="top" id="L_0_147" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;147&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_147"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"></span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">printExpression e&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">"</span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">100 = </span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">"</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">++</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span>
+</div></td></tr><tr><td valign="top" id="L_0_148" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;148&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_148"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( intercalate&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">"</span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;"> + </span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">"</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">$</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">map</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> printTerm e)</span>
+</div></td></tr><tr><td valign="top" id="L_0_149" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;149&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_149"><span class="normal" style="background-color: #FFFFFF; color: #000000;">&nbsp;</span>
+</div></td></tr><tr><td valign="top" id="L_0_150" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;150&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_150"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">printTerm t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; intercalate&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">"</span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">*</span><span class="normal real_text" style="background-color: #FFFFFF; color: #8F8634;">"</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">$</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">map</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> printFactor t</span>
+</div></td></tr><tr><td valign="top" id="L_0_151" class="code_text code_gutter" style="background: #E5E5E5"><span style="color: #858585;">&nbsp;151&nbsp;</span></td><td valign="top" class="code_text code_line" style="background-color: #FFFFFF;"><div id="C_0_151"><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">printFactor f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">=</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">concat</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #C70040;">$</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">map</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> </span><span class="normal real_text" style="background-color: #FFFFFF; color: #34A7BD;">show</span><span class="normal real_text" style="background-color: #FFFFFF; color: #000000;"> f</span>
+</div></td></tr></tbody></table></td></tr></tbody></table></pre><div id="toolbarhide"><div id="toolbar"><img onclick="toggle_plain_text();" alt="" title="Toggle Plain" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3AofFg8dF9eGSAAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAANRJREFUOMvdkTFOgkEQhResaeQScAsplIRGDgKttnsIOYIUm1hQa/HfQiMFcIBt9k/UTWa/sRkbspKfzviS7eZ7M/uec39WbdsOgU/gI6V0ebZBKeVeTaWUu7PgpmkugD3wZW8XQuh3NhCRuaoq8AisVVVF5LazAfBi0JWITMzsuROccx4b8O6cc977HrAFyDmPumxfHQf3EyjwcBKOMQ6ApL8ISDHGwanqljb4VLlsY5ctqrD99c3Cm1aamZn5q/e+V6vuxgb2tc5DCH3gYAuu3f/RNzmJ99G3cZ53AAAAAElFTkSuQmCC"><img onclick="toggle_gutter();" alt="" title="Toggle Gutter" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3AofFg8FBLseHgAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAAM5JREFUOMvdjzFqAlEQhuephZWNYEq9wJ4kt7C08AiyhWCXQI6xh5CtUqVJEbAU1kA6i92VzWPnmxR5gUUsfAQbf5himPm+YURumSzLetFQWZZj4Bn45DcHYFMUxfAqAbA1MwO+gHeA0L9cJfDeJ6q6yvO8LyKiqosgOKVp6qJf8t4nQfD9J42Kqi6D4DUabppmBhzNzNq2fYyC67p+AHbh+iYKrqpqAnwE+Ok/8Dr6b+AtwArsu6Wq8/P9wQXHTETEOdcTkWl3YGYjub/8ANrnvguZ++ozAAAAAElFTkSuQmCC"><img onclick="page_print();" alt="" title="Print" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3AofFhAl8o8wSAAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAAQZJREFUOMulkzFSgjEUhL8X/xJ/iBegkAtQ6A08gIUehFthYykOw9BzBmwcaxGoZW1eZjIx/sC4TTJv8ja7mxfDIcmAAWDUIeDLzJQXm2w/AFZOkB8yoAU+gHtJ7yVJUnAlaS1pJOm6WN8kjSUtJQ1dLQChIvMATIEXXw9e3wMT4NnV/rKQsAcegAvgG9g5wcwv7OU51QgugSegD2yBO+DWmyLw+leINQXyW5VeoQj4qIIcW+CxPFwjSLKtEnAZOkGSSYruL3QMUxq0AERJUZKl5pV7bjsmMR+qHfAJ3DReDB4cwKLiv0R0S5Yy6ANz37ecgSZ7nui1zYm9G0B2wi+k63fyX/wA0b9vjF8iB3oAAAAASUVORK5CYII="><img onclick="dump_theme();" alt="" title="Download" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3AofFhAWTV9RXgAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAAJtJREFUOMvdk9ENwyAQQ5+rDBA6QZbI/gN0h3YE2gXi/lykhABN1b9aQkh3+CEwiEK2BYyAyhbwlORtceCoEbgBqahnYI65C1CYr43eThd+1B8Ahkp0qXZZa8/2LlIFIG2i676DmDMwS8pDcZzW7tt4DbwOr8/2ZPthe3FbS6yZ4thfQdrmE5DP5g7kvLkCucdomtWDRJzUvvGqN6JK1cOooSjlAAAAAElFTkSuQmCC"></div></div>
+
+<script type="text/javascript">
+/*jshint globalstrict: true*/
+"use strict";
+
+function page_print() {
+    var element = document.getElementById("toolbarhide");
+    if (element != null) {
+        element.style.display = "none";
+    }
+    if (window.print) {
+        window.print();
+    }
+    if (element != null) {
+        element.style.display = "block";
+    }
+}
+
+</script>
+
+<script type="text/javascript">
+/*jshint globalstrict: true*/
+"use strict";
+
+var plain_text_clone = null;
+
+function toggle_plain_text() {
+    var lines = document.querySelectorAll("td.code_line"),
+        line_len = lines.length,
+        text = "",
+        plain_pre = document.querySelectorAll("pre.simple_code_page"),
+        orig_pre, pre, i, j, spans, span_len, span;
+    if (plain_pre.length > 0) {
+        document.body.removeChild(plain_pre[0]);
+        document.body.appendChild(plain_text_clone);
+        document.body.className = "code_page";
+    } else {
+        for (i = 0; i < line_len; i++) {
+            spans = lines[i].querySelectorAll("span.real_text");
+            span_len = spans.length;
+            for (j = 0; j < span_len; j++) {
+                span = spans[j];
+                if ("textContent" in span) {
+                    text += span.textContent;
+                } else {
+                    text += span.innerText;
+                }
+            }
+            text += "\n";
+        }
+        orig_pre = document.querySelectorAll("pre.code_page")[0];
+        plain_text_clone = orig_pre.cloneNode(true);
+        pre = document.createElement('pre');
+        pre.className = "simple_code_page";
+        pre.appendChild(document.createTextNode(text));
+        document.body.removeChild(orig_pre);
+        document.body.appendChild(pre);
+        document.body.className = "simple_code_page";
+    }
+}
+
+</script>
+
+<script type="text/javascript">
+/*jshint globalstrict: true*/
+"use strict";
+
+var page_line_info = {
+        wrap:      false,
+        ranges:    null,
+        wrap_size: null,
+        tables:    null,
+        header:    null,
+        gutter:    false
+    };
+
+function wrap_code() {
+    var start, end, i, j, mode, idx,
+        width = 0, el;
+    if (page_line_info.header) {
+        document.getElementById("file_info").style.width = page_line_info.wrap_size + "px";
+    }
+    for (i = 1; i <= page_line_info.tables; i++) {
+        idx = i - 1;
+        start = page_line_info.ranges[idx][0];
+        end = page_line_info.ranges[idx][1];
+        for(j = start; j < end; j++) {
+            if (mode == null) {
+                mode = true;
+                if (page_line_info.gutter) {
+                    width = document.getElementById("L_" + idx + "_" + j).offsetWidth;
+                }
+            }
+            el = document.getElementById("C_" + idx + "_" + j);
+            el.style.width = (page_line_info.wrap_size - width) + "px";
+            el.className = "wrap";
+        }
+    }
+}
+
+function toggle_gutter() {
+    var i, j, mode, rows, r, tbls, cells;
+    tbls  = document.getElementsByTagName('table');
+    for (i = 1; i <= page_line_info.tables; i++) {
+        rows = tbls[i].getElementsByTagName('tr');
+        r = rows.length;
+        for (j = 0; j < r; j++) {
+            cells = rows[j].getElementsByTagName('td');
+            if (mode == null) {
+                if (page_line_info.gutter) {
+                    mode = 'none';
+                    page_line_info.gutter = false;
+                } else {
+                    mode = 'table-cell';
+                    page_line_info.gutter = true;
+                }
+            }
+            cells[0].style.display = mode;
+        }
+    }
+    if (page_line_info.wrap && mode != null) {
+        setTimeout(function() {wrap_code();}, 500);
+    }
+}
+
+function unwrap_code() {
+    var i, j, idx, start, end, el;
+    if (page_line_info.header) {
+        document.getElementById("file_info").style.width = "100%";
+    }
+    for (i = 1; i <= page_line_info.tables; i++) {
+        idx = i - 1;
+        start = page_line_info.ranges[idx][0];
+        end = page_line_info.ranges[idx][1];
+        for(j = start; j < end; j++) {
+            el = document.getElementById("C_" + idx + "_" + j);
+            el.style.width = "100%";
+            el.className = "";
+        }
+    }
+}
+
+function toggle_wrapping() {
+    if (page_line_info.wrap) {
+        page_line_info.wrap = false;
+        unwrap_code();
+    } else {
+        page_line_info.wrap = true;
+        wrap_code();
+    }
+}
+
+
+page_line_info.wrap      = false;
+page_line_info.ranges    = [[1,152]];
+page_line_info.wrap_size = 900;
+page_line_info.tables    = 1;
+page_line_info.header    = true;
+page_line_info.gutter    = true;
+</script>
+
+
+
+</body></html>
