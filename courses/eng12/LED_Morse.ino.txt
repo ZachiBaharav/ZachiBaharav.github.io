@@ -1,0 +1,100 @@
+
+
+// Based on the Blink_LED program
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+}
+
+
+// defining Morse code constants
+// If the duration of a dot is taken to be one unit then that of a dash is three units. 
+// The space between the components of one character is one unit, between characters is three units and between words seven units.
+const int DOT   = 500;
+const int DASH  = 3*DOT;   
+const int SPACE_C     = DOT;   // Within characther
+const int SPACE_CHARS = 3*DOT; // Between characters
+
+const int SPACE_LONG  = 10*DOT; // Just for me
+
+
+void loop()
+{
+
+
+  // Word will send: RAMS
+  // Using: https://morsecode.scphillips.com/morse2.html 
+  // R = .-.
+  // A = .-
+  // M = --
+  // S = ...
+  
+
+  digitalWrite(13, LOW);   // Turn on the LED
+
+
+  // R = .-.
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DOT);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_C);
+
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DASH);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_C);
+
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DOT);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_CHARS);
+
+
+  // A = .-
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DOT);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_C);
+
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DASH);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_CHARS);
+
+  
+  // M = --
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DASH);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_C);
+
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DASH);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_CHARS);
+
+
+  // S = ...
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DOT);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_C);
+
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DOT);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_C);
+
+  digitalWrite(13, HIGH);   // Turn on the LED
+  delay(DOT);
+  digitalWrite(13, LOW);    // Turn off the LED
+  delay(SPACE_CHARS);
+
+
+
+
+  delay(SPACE_LONG);
+  
+}
+

@@ -1,0 +1,70 @@
+
+
+Terms:
+
+Unit preview
+
+Comments:
+  // single line
+  /*  multiple lines */
+  /** Used for Javadoc */
+
+  Don't put too many: Write a clear code!
+
+// Hello-World in three ways
+1. Console:
+    javac Main.java   <-- Compiler
+    java Main
+
+2. IDE (Integrated Development Environment)
+
+3. GUI
+
+
+Compilation errors (wiggly red lines included) : Everything that is discovered BEFORE running the program. Syntax for example.
+Run-Time errors : Discovered only when running the program.  For example, dividing by zero.
+Logic errors:  The program works as you planned, but the results are wrong.
+
+Declarations and statements are terminated with semicolon ';'
+Statements can be grouped by using braces '{' and '}'
+
+Naming:
+(of variables, classes, functions)
+  Can use letters (uppercase, lowercase), digits, and underscore '_'
+  No name can start with a digit  (underscore is ok)
+  Reserved Java names are not allowed
+    note: All Java reserved words are only lowercase letter
+
+  Convention:
+    Classed start in Capital letter: BankAccount
+    methods and variables start in lowerCase, using camelCase convention:  addInterest( double sum)
+    Constants may use all capitals and underscore between words: SUN_DISTANCE
+
+Class:
+  One class per file.
+  Same name as file.
+
+
+  Constructor(s):
+    same name as class
+    not return type specified
+    can have multiple constructors
+
+  Fields, aka Instance variables
+  Methods, aka functions
+
+  Object: An instance of the class.
+
+
+toString()
+  Converts the object to a string
+
+
+Reserved words (keywords). About 53 of them. Examples:
+public, private, static, void, int, double
+
+Need one and only:
+  public static void main(String[] args)
+  This is where the program starts.
+
+=== End ===

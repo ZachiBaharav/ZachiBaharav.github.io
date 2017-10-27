@@ -1,0 +1,16 @@
+
+Github Classroom directions:
+
+===
+
+Students:
+
+1. Click on the link, and follow on web ==> creates YOUR copy of classroom
+2. When all is set (you can see it on web and got an email), go to IDE.
+3. Team-> clone, and follow directions.
+
+Make changes, do you work
+4. Commit: Team->Commit -> color changes to black
+5. Push: Team->remote->Push and follow directions. -> Symbol next to project name changes.
+
+===

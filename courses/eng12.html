@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Engineering 1-2</title>
+
+		<script>
+			function goBack() {
+				window.history.back();
+			}
+		</script>
+
+		<style>
+			table {
+				width: 90%;
+			}
+			table, th, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			th {
+				padding: 5px;
+				text-align: center;
+			}
+			td {
+				padding: 5px;
+				text-align: left;
+				vertical-align: top;
+			}
+			table#t01 tr:nth-child(even) {
+				background-color: #eee;
+			}
+			table#t01 tr:nth-child(odd) {
+				background-color: #fff;
+			}
+			table#t01 th {
+				/*    background-color: black;
+				 color: white;
+				 */
+			}
+		</style>
+
+	</head>
+	<body>
+		<input type="button" value="Back" onclick="goBack()">
+		<br>
+		<h1>
+		<p align="center">
+			Engineering 1-2
+		</h1>
+
+		<br>
+
+		<h3> Syllabus:</h3>
+		<a href="./eng12/2017_Fall_Syllabus_Eng1_Block_7_Baharav.pdf">2017_Fall_Syllabus_Eng1_Block_7_Baharav.pdf</a>
+		<br>
+		More detailed academic syllabus:
+		<a href="./eng12/UC_A2G_Engineering_1_Arduino_Syllabus.pdf">UC_A2G_Engineering_1_Arduino_Syllabus.pdf</a>
+
+		<br>
+		<h3>Book</h3>
+		"Sparkfun Inventor's Kit for Arduino - V3.3 with New Simon says Circuit Experiment". It is a kit
+		of hardware AND a book. The lessons will follow most of the book, and they will use the hardware.
+		<br>
+		Book:<a href="https://www.amazon.com/Sparkfun-Inventors-Kit-Arduino-Experiment/dp/B00O8U2I12">Amazon</a> ; <a href="https://www.sparkfun.com/products/13969">SparkFun</a>
+
+		<br>
+		<h3>Wiki pages</h3>
+		We will be using extensively (for projects, homework) the wikipages:
+		<br>
+		<ul>
+			<li>
+				<a href="https://kehillaheng2017.wikispaces.com/">Main page: https://kehillaheng2017.wikispaces.com/</a>
+			</li>
+			<li>
+				<a href="https://kehillaheng2017.wikispaces.com/project/list">Projects list pages</a>
+			</li>
+		</ul>
+
+		<br>
+		<h3>Resources for materials etc</h3>
+		<ul>
+			<li>
+				<a href="https://www.digikey.com/">Digikey</a>
+			</li>
+			<li>
+				<a href="https://www.sparkfun.com/">Sparkfun</a>
+			</li>
+			<li>
+				<a href="https://www.adafruit.com/">Adafruit</a>
+			</li>
+			<li>
+		<a href="http://fritzing.org/home/">http://fritzing.org/home/</a> : Schematics
+			</li>
+		</ul>
+
+		<br>
+		<h3>Content below:</h3>
+		<ul>
+			<li>
+				<a href="#Classes Table">Classes (and homework)</a>
+			</li>
+			<li>
+				<a href="#Final Project Table">Final Project</a>
+			</li>
+		</ul>
+
+		<br>
+		<br>
+
+
+<h3>Useful tips and tricks</h3>
+<ol>
+	<li>Powering arduino:</li>
+<ol>
+	<li>By 9V battery: <a href="http://www.instructables.com/id/Powering-Arduino-with-a-Battery/">Instructables</a>.</li>
+	<li><a href="https://www.amazon.com/5pack-Battery-2-1mm-Arduino-Corpco/dp/B01AXIEDX8">Buying on Amazon.</a></li>
+</ol>
+</ol>
+
+		<h3><a name="Classes Table">Classes Table</a></h3>
+
+		<br>
+		<br>
+		<table id="t01">
+			<tbody>
+				<tr>
+					<th width="15%"><b>TOPIC(S)</b></th>
+					<th width="30%"><b>DETAILS</b>
+					<br>
+					('need to know')</th>
+					<th width="30%"><b>HOMEWORK</b></th>
+					<th width="25%"><b>LINKS+</b></th>
+				</tr>
+
+				<tr>
+					<td rowspan="2">UNIT 0:
+					<br>
+					<b>Micro controller</b> and <b>Arduino</b>
+					<br>
+					Intro </td>
+
+					<td>
+					<UL>
+						<li>
+							Run "Hello world" on Arduino (LED <b>on</b> board blinking).
+						</li>
+					</UL></td>
+
+					<td>Setting up the environment.
+					<br>
+					Follow directions in here: <a href="./eng12/Unit0_Arduino_SettingUp.pdf">Unit0_Arduino_SettingUp.pdf</a> ; <a href="./eng12/Unit0_Arduino_SettingUp.docx">[docx]</a></td>
+					<td> Additional resources and background:
+					<UL>
+						<li>
+							<a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a>
+						</li>
+						<li>
+							<a href="http://www.sparkfun.com/ftdi">FTDI</a>
+						</li>
+						<li>
+							<a href="http://www.sparkfun.com/sikguide">Kit Guide</a>
+						</li>
+						<li>
+							<a href="https://www.sparkfun.com/sikcode .">Kit Code</a>
+						</li>
+					</UL></td>
+
+				</tr>
+				<tr>
+					<td colspan="3">
+					<OL>
+						<li>
+							Syllabus, WikiSpace, projects. Final project.
+						</li>
+					</OL></td>
+
+				</tr>
+
+				<tr>
+					<td rowspan="2">UNIT 1:
+					<br>
+					<b>LED off board</b> and <b>Morse-code</b>
+					<br>
+					Intro </td>
+
+					<td>
+					<UL>
+						<li>
+							Run "Hello world" on Arduino (LED <b>off</b> board blinking).
+						</li>
+					</UL></td>
+
+					<td>Project: "Morse Code"
+					<br>
+					<br>
+					Sample solution files:
+					<OL>
+						<li>
+							<a href="./eng12/LED_Circuit_01_LED_Blink.ino.txt">LED_Blink</a>
+						</li>
+						<li>
+							<a href="./eng12/LED_Morse.ino.txt">LED_MORSE</a>
+						</li>
+					</OL></td>
+					<td> Additional resources and background. We'll talk in class a little bit about
+					semiconductors, but if you ignore the 'p' and 'n' topics in the below, they are very useful:
+					<UL>
+						<li>
+							<a href="http://dangerousprototypes.com/docs/Basic_Light_Emitting_Diode_guide">How LED works</a>
+						</li>
+						<li>
+							<a href="https://en.wikipedia.org/wiki/LED_circuit">Wikipedia on LEDs</a>
+						</li>
+						<li>
+							<a href="https://www.physicsforums.com/threads/led-vs-plain-diodes.505628/">Forum discussions.</a> Few interesting points in the first few answers.
+						</li>
+					</UL></td>
+
+				</tr>
+				<tr>
+					<td colspan="3"><a href ="https://kehillaheng2017.wikispaces.com/project/manage/10_LED%20and%20Morse%20Code">WikiSpace project pages</a>
+					<OL>
+						<li>
+							SIK guide: 5V board (USB); How breadboard works.
+							What is LED (SIK Guide). Software: OnBoard LED blinking.
+						</li>
+						<li>
+							Choosing LED resistor: Example <a href="https://www.sparkfun.com/products/9592">web</a> ; <a href="./eng12/LED_5mm_Red_XLM2MR12D.pdf">Good data sheet</a>
+							<a href="./eng12/LED_5mm_Simple_COM-09592-YSL-R531K3D-D2.pdf">OK data sheet</a> .
+							Software: OffBoard LED blinking.
+						</li>
+					</OL>
+				</tr>
+
+
+				<tr>
+					<td rowspan="2">UNIT 2:
+					<br>
+					<b>Circuits</b> <br> 
+					<b>Ohm's</b> Law and <b>Kirchhoff's</b> rules
+					<br>
+					 </td>
+					<td>
+						Experiments from the SIK guide (you can get the PDF on the web, see link above):
+					<UL>
+						<li>Experiment 2: potentiometer</li>
+						<li>Experiment 4: Multiple LEDs</li>
+					</UL></td>
+
+					<td>Project: "Array of LEDs"
+					<br>
+					A code-controlled chain (or matrix) of light emitting diodes, and turning these on and off in a predefined sequence.
+</td>
+					<td> 
+						<OL>
+							<li>
+						Measure also the voltages and currents in various points in the circuits.
+						</li>
+							<li>
+							Schematic!!  Use Fritzing.
+							</li>
+						
+						</OL>
+						</td>
+
+				</tr>
+				<tr>
+					<td colspan="3">
+						<ol>
+						<li><a href ="https://kehillaheng2017.wikispaces.com/project/manage/10_LED%20and%20Morse%20Code">WikiSpace project pages</a></li>
+						<li><a href="./eng12/Unit2_Circuits1.pdf">Unit2_Circuits1.pdf</a></li>
+						<li>Finish stuff on wikispaces, start on Final project.</li>
+						<li>Schematic: Use Fritzing.</li>
+						<li><a href="./eng12/Unit2_Circuits1.pdf">Practice Quiz</a></li>
+						</ol>
+<!--
+					<ul>
+					<li>
+					Connecting Arduino to processing: <a href="http://www.instructables.com/id/Arduino-to-Processing-Serial-Communication-withou/"> simple. </a>
+					</li>
+					<li>
+					Connecting Arduino to processing: <a href="https://learn.sparkfun.com/tutorials/connecting-arduino-to-processing"> More elaborated. </a>
+					</li>
+					</ul>
+					-->
+				</tr>
+
+
+				<tr>
+					<td rowspan="2">UNIT 3:
+					<br>
+					<b>Digital and Analog</b> <br> 
+					PWM,  Logic circuits
+					<br>
+					 </td>
+					<td>
+						Experiments from the SIK guide (you can get the PDF on the web, see link above):
+					<UL>
+						<li>Experiment 3: Color LED</li>
+					</UL></td>
+
+					<td>Project: "Color LED"
+					<br>
+					A code-controlled color sequencing.
+</td>
+					<td> 
+						<OL>
+							<li>
+						Input from console.
+						Communication resource, Processing and Arduino: 
+						<a href="https://learn.sparkfun.com/tutorials/terminal-basics/arduino-serial-monitor-windows-mac-linux">Tutorial</a>
+						</li>						
+						</OL>
+						</td>
+
+				</tr>
+				<tr>
+					<td colspan="3">
+						<ol>
+						<li><a href ="https://kehillaheng2017.wikispaces.com/project/manage/20_LED%20matrix%20or%20multiple">WikiSpace project pages</a></li>
+						</ol>
+<!--
+					<ul>
+					<li>
+					Connecting Arduino to processing: <a href="http://www.instructables.com/id/Arduino-to-Processing-Serial-Communication-withou/"> simple. </a>
+					</li>
+					<li>
+					Connecting Arduino to processing: <a href="https://learn.sparkfun.com/tutorials/connecting-arduino-to-processing"> More elaborated. </a>
+					</li>
+					</ul>
+					-->
+				</tr>
+
+
+			</tbody>
+
+		</table>
+
+		<br>
+		^ <b>Password protected.</b>
+		<br>
+		* <b> </b>
+		<br>
+		** <b></b>
+
+		<br>
+		<br>
+
+		<h3><a name="Final Project Table">Final Project Table</a></h3>
+
+		<h5>Resources for parts:</h5>
+		<ul>
+
+		</ul>
+		<br>
+		<br>
+		<table id="t01">
+			<tbody>
+				<tr>
+					<th width="15%"><b>Week</b></th>
+					<th width="30%"><b>DETAILS</b>
+					<br>
+					('need to know')</th>
+					<th width="30%"><b>MILESTONE</b></th>
+					<th width="25%"><b>RESOURCES+</b></th>
+				</tr>
+
+				<tr>
+					<td>Week 1:
+					<br>
+					<b>Intro + Ideas</b>
+					<br>
+					Intro </td>
+
+					<td>
+					<UL>
+						<li>
+							Scope of project.
+						</li>
+						<li>
+							Structure of the project work.
+						</li>
+						<li>
+							Process.
+						</li>
+					</UL></td>
+
+					<td>
+					<UL>
+						<li>
+							List of possible ideas.
+						</li>
+						<li>
+							Pros and cons for each, complexity, risk.
+						</li>
+					</UL></td>
+					<td> Additional resources and background:
+					<UL>
+						<li>
+							<a href="./">useful link</a>
+						</li>
+					</UL></td>
+				</tr>
+
+			</tbody>
+
+		</table>
+
+		<br>
+		^ <b>Password protected.</b>
+		<br>
+		* <b> </b>
+		<br>
+		** <b> </b>
+		<br>
+		<br>
+
+		==================================
+
+		<br>
+		<br>
+		<hr size=4 width="70%" align="left">
+		Questions/Comments: Zbaharav at Kehillah dot Org  or Zachi at Baharav dot Org .
+		<br>
+		<br>
+
+	</body>
+</html>
