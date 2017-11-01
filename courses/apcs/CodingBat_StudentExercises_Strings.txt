@@ -1,0 +1,45 @@
+
+Andy:
+http://codingbat.com/prob/p204019 - replaceWithDash - Nested loops. Two strings, replaces if not in other.
+http://codingbat.com/prob/p205817 - weirdInt - Logic
+http://codingbat.com/prob/p214827 - multiply2Int - nested loops 1x1,1x2,1x3,..
+
+Dvir:
+http://codingbat.com/prob/p223625 - Trimify - Simple string, remove spaces at start/end.
+http://codingbat.com/prob/p264617 - Fibonacci - logic/loop
+http://codingbat.com/prob/p257839 - sBlocksReversed - Nested for loops. H HE HEL HELL HELLO
+
+Jason:
+http://codingbat.com/prob/p283286 - same - Simple string/logic
+http://codingbat.com/prob/p274087 - areCharsEqual - String/loop, adding chars values
+http://codingbat.com/prob/p255264 - sameChar2String - Nested loop strings. Love it!
+
+Oren:
+http://codingbat.com/prob/p288986 - stretchString - Nested loops: ORREEENNNN
+http://codingbat.com/prob/p297745 - numberOrder - String, loop, logic: "137" -> true; "12463" -> false
+http://codingbat.com/prob/p233879 - logic. Divisible. Assign color.
+
+Chloe:
+http://codingbat.com/prob/p293261  - charTwo - String. double each char.
+http://codingbat.com/prob/p270254  - fishbubble - logic.
+http://codingbat.com/prob/p215603  - sum2Ints - really?!?
+
+Yotam:
+http://codingbat.com/prob/p238168 - checkLetters - not done.
+http://codingbat.com/prob/p274088 - sumEvenOrOdd - logic?  convert string/char to number
+http://codingbat.com/prob/p210133 - sumOfNum - Logic. sum of all digits.
+
+Adam:
+http://codingbat.com/prob/p276508  - parkingSpots - Logic. Love it! isKehillah.
+http://codingbat.com/prob/p206816  - shoutLoud - Nested loop. Repeat letters.
+http://codingbat.com/prob/p201508  - returnEmail - String. Convert to email.
+
+Sai:
+http://codingbat.com/prob/p286735 - charPrint - Nested for loops. "*  *  "
+http://codingbat.com/prob/p271868 - Strings - funnyString - toUpperCase
+http://codingbat.com/prob/p276748 - Logic - isSuccessful - Kehillah dance. Love it!
+
+Dylan:
+http://codingbat.com/prob/p299086 - String - secondToLast
+http://codingbat.com/prob/p392939  <-- not found.
+http://codingbat.com/prob/p255339  - String - reverseString
