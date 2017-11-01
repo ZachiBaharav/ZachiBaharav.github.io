@@ -41,5 +41,5 @@ http://codingbat.com/prob/p276748 - Logic - isSuccessful - Kehillah dance. Love 
 
 Dylan:
 http://codingbat.com/prob/p299086 - String - secondToLast
-http://codingbat.com/prob/p392939  <-- not found.
+http://codingbat.com/prob/p293929 - String, nested loops.
 http://codingbat.com/prob/p255339  - String - reverseString
