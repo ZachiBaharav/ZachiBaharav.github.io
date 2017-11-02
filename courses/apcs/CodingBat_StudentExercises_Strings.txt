@@ -43,3 +43,19 @@ Dylan:
 http://codingbat.com/prob/p299086 - String - secondToLast
 http://codingbat.com/prob/p293929 - String, nested loops.
 http://codingbat.com/prob/p255339  - String - reverseString
+
+Abby:
+http://codingbat.com/prob/p260348 - String - stutterString - repeat first letter n times.
+http://codingbat.com/prob/p238880 - logic - jacketBob
+http://codingbat.com/prob/p286700 - Nested loop + logic - String repeating in receding order. nice.
+
+Nathan:
+http://codingbat.com/prob/p279340 - maket - Make first and last t. Should add an example for string less than two.
+http://codingbat.com/prob/p253915 - owitcheroos - string - switch first and last.
+http://codingbat.com/prob/p285478 - doaB - String - replace the first letter to B.
+http://codingbat.com/prob/p279542 - isAm - logic. simple.
+
+Ari:
+http://codingbat.com/prob/p255716 - Logic - Factor. Nice.
+http://codingbat.com/prob/p272941 - String - reverseit
+http://codingbat.com/prob/p278053- Two strings - adding interleaved.
