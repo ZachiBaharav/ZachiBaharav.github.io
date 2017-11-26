@@ -59,3 +59,8 @@ Ari:
 http://codingbat.com/prob/p255716 - Logic - Factor. Nice.
 http://codingbat.com/prob/p272941 - String - reverseit
 http://codingbat.com/prob/p278053- Two strings - adding interleaved.
+
+Ben:
+http://codingbat.com/prob/p218166 - String - switch every two letters.
+http://codingbat.com/prob/p218467 - ASCII art - Add asterisks
+http://codingbat.com/prob/p201320 - String - remove '64' anywhere from the string.
