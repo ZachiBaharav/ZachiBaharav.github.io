@@ -1,0 +1,195 @@
+
+The official resource:
+https://docs.oracle.com/javase/tutorial/java/index.html
+
+
+Terms:
+===
+
+Comments:
+  // single line
+  /*  multiple lines */
+  /** Used for Javadoc */
+
+  Don't put too many: Write a clear code!
+
+// Hello-World in three ways
+1. Console:
+    javac Main.java   <-- Compiler
+    java Main
+
+2. IDE (Integrated Development Environment)
+
+3. GUI
+
+
+Compilation errors (wiggly red lines included) : Everything that is discovered BEFORE running the program. Syntax for example.
+Run-Time errors : Discovered only when running the program.  For example, dividing by zero.
+Logic errors:  The program works as you planned, but the results are wrong.
+
+Declarations and statements are terminated with semicolon ';'
+Statements can be grouped by using braces '{' and '}'
+
+Naming:
+(of variables, classes, functions)
+  Can use letters (uppercase, lowercase), digits, and underscore '_'
+  No name can start with a digit  (underscore is ok)
+  Reserved Java names are not allowed
+    note: All Java reserved words are only lowercase letter
+
+  Convention:
+    Classed start in Capital letter: BankAccount
+    methods and variables start in lowerCase, using camelCase convention:  addInterest( double sum)
+    Constants may use all capitals and underscore between words: SUN_DISTANCE
+
+Class:
+  One class per file.
+  Same name as file.
+
+
+  Constructor(s):
+    same name as class
+    not return type specified
+    can have multiple constructors
+
+  Fields, aka Instance variables
+  Methods, aka functions
+
+  Object: An instance of the class.
+
+
+toString()
+  Converts the object to a string
+
+
+Reserved words (keywords). About 53 of them. Examples:
+public, private, static, void, int, double
+
+Need one and only:
+  public static void main(String[] args)
+  This is where the program starts.
+
+===
+
+primitive types
+
+int, double, char, boolean
+(different #bytes in memory)
+int:
+  Integer arithmetic
+  %  (same rank as / and *)
+  pre/post ++
+  +=  : compound assignment
+
+  % operator: DecConverter:: peeling digits
+
+boolean:
+  true, false
+  1 Byte
+
+char:
+  1 Byte!
+
+---
+casting:
+Type of result depends only on the type of operands.
+ a / (double)b
+
+
+
+Strings (we will visit again!)
+a class, not primitive type!!
+length()
+substring(from, upto) <== UpTo , not including!!
+charAt(index)   <== returns char!
+compareTo(str2)  <== lexicographic order
+equals(str2)     <== Boolean
++ : concatenation
+
+DON'T do str1==str2 !
+compares address of object, not content
+
+String literals/escape sequence:
+"\n", "This is a quote:\"Hi there\"."
+
+---
+Misc.
+Constants:
+private static final int SIDES=5;  <== can be initialized in constructor
+private final int sides;  <== can be initialized in constructor
+
+Literlas (aka literal constants):
+ "Hello"
+ 5.0
+ 7
+ etc.
+
+Fields, local variables and parameters, and scope:
+Fields are class variables: Defined outside of any method
+    a. can use public/private
+    b. get default value!
+    c. Scope: Whole class
+Local variables: within a method
+     a. CANNOT use public/private
+     b. do not get default value! Have to be initialized BEFORE used
+     c. Scope: From where defined to end of block.
+parameters: defined in the header of method, and are much like local variables
+
+
+
+===
+Base converter ==> ASCII of char,
+Peeling.
+Binary ,hex, decimal
+Integer is 4 bytes, plus and minus, so:
+-2^31 to 2^31-1
+Byte: char: 0 to 255
+
+
+Boolean
+true , false
+if (condition)
+{
+
+} else {
+
+}
+
+
+===
+
+Variables:
+Local variables - Within a method
+Instance variables - Non static fields of a class
+Class variables - Static fields
+Parameters - Values to methods
+
+Scope of variables
+===
+Methods:
+
+same naming rules as variables. Common: camelNotation
+
+[Modifier: public, private]  returnType methodName  ( [parameterList] ) [exceptionList] { [methodBody] }
+Minimal:  returnType methodName  ( )  {  }
+
+
+Method signature:  Name + argumentList  . NOT return type.
+Overloading methods: different by the type and number of arguments.
+public void draw(String S){}
+public void draw(int i){}
+public void draw(double d){}
+
+
+Pass by value - Switch program
+
+
+===
+Class
+
+
+this
+
+===
+
+=== End ===
