@@ -2,6 +2,9 @@
 The official resource:
 https://docs.oracle.com/javase/tutorial/java/index.html
 
+The official subset:
+
+
 
 Terms:
 ===
@@ -189,7 +192,22 @@ Class
 
 
 this
+Static methods/variables : Class .vs. instance
 
 ===
+Inheritance
 
+OOP: Encapsulation
+Keyword: extends
+super: dot notation
+super: constructor
+
+Methods:
+  New
+  Overloading
+  Reusing the super
+
+Interface class:
+
+Abstract class:
 === End ===
