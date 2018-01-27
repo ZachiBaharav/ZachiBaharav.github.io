@@ -48,7 +48,7 @@ Naming:
 Class:
   One class per file.
   Same name as file.
-
+  Keywords: class, public/private/protected (<- no need to know protected), static, import, final
 
   Constructor(s):
     same name as class
@@ -59,6 +59,9 @@ Class:
   Methods, aka functions
 
   Object: An instance of the class.
+
+  Accessors /  Selectors
+  Modifiers /  Mutators
 
 
 toString()
@@ -72,19 +75,23 @@ Need one and only:
   public static void main(String[] args)
   This is where the program starts.
 
+
 ===
 
-primitive types
+Primitive types
+INTEGER: byte, short, *int*, long
+FLOATING POINT: float, *double*
+BOOLEAN:  boolean
+CHARACTER: char
 
-int, double, char, boolean
+String is NOT primitive type. An Object.
+
 (different #bytes in memory)
 int:
   Integer arithmetic
-  %  (same rank as / and *)
+  %  modulus (same rank as / and *)
   pre/post ++
   +=  : compound assignment
-
-  % operator: DecConverter:: peeling digits
 
 boolean:
   true, false
@@ -94,20 +101,26 @@ char:
   1 Byte!
 
 ---
+
 casting:
 Type of result depends only on the type of operands.
  a / (double)b
 
+Promoting data types:    double + int -->  double
+
+---
+
+Logical operators:    ||  ,   &&,   !
 
 
 Strings (we will visit again!)
 a class, not primitive type!!
-length()
-substring(from, upto) <== UpTo , not including!!
-charAt(index)   <== returns char!
-compareTo(str2)  <== lexicographic order
-equals(str2)     <== Boolean
-+ : concatenation
+ length()
+ substring(from, upto) <== UpTo , not including!!
+ charAt(index)   <== returns char!
+ compareTo(str2)  <== lexicographic order
+ equals(str2)     <== Boolean
+ + : concatenation
 
 DON'T do str1==str2 !
 compares address of object, not content
@@ -158,6 +171,10 @@ if (condition)
 
 }
 
+Things you do not need to master, just know they exist:
+switch()
+(...) ? oneCase : twoCase
+
 
 ===
 
@@ -186,6 +203,17 @@ public void draw(double d){}
 
 Pass by value - Switch program
 
+===
+SPECIAL METHODS
+  public static void main(String[] args) in applications
+  init() in JFrames (though you won't need to write JFrames on final)
+  paint() in JFrames
+  repaint()--used to invoke paint() in JFrames
+GUI TERMS
+  EVENTS (clicks, keypresses, etc.)
+  LISTENER (MouseListener, MouseMotionListener, ActionListener)
+  (need to know what they do for final, but won't need to write code with them)
+
 
 ===
 Class
@@ -199,6 +227,7 @@ Inheritance
 
 OOP: Encapsulation
 Keyword: extends
+Keyword: implements
 super: dot notation
 super: constructor
 
@@ -208,6 +237,26 @@ Methods:
   Reusing the super
 
 Interface class:
+   Comparable
+      Return value of -1,1,0
 
 Abstract class:
+
+
+
+
+
+Recursion
+  Base case
+  Recursive call
+
+
+===
+
+ARRAYS AND ARRAY-LIKE STRUCTURES
+  ARRAYS (e.g., double[] testScores)
+  MULTIDIMENSIONAL ARRAYS (e.g., boolean[][] isAlive)
+  ARRAYLISTS (e.g., ArrayList<Object> a)
+
+
 === End ===
