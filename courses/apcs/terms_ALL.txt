@@ -220,7 +220,7 @@ Class
 
 
 this
-Static methods/variables : Class .vs. instance
+Static methods/variables : Class .vs. instance .  Account number.
 
 ===
 Inheritance
