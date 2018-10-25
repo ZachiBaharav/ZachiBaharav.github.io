@@ -81,13 +81,18 @@ Need one and only:
 Primitive types
 INTEGER: byte, short, *int*, long
 FLOATING POINT: float, *double*
-BOOLEAN:  boolean
+BOOLEAN:  *boolean*
 CHARACTER: char
+
+Only int, double, boolean are tested in the AP exam.
+Specifically, char is not!!
+
 
 String is NOT primitive type. An Object.
 
 (different #bytes in memory)
 int:
+  In Java, int is 4 Bytes. Max value: 2^31-1 Min value: -2^31. 2's complement.
   Integer arithmetic
   %  modulus (same rank as / and *)
   pre/post ++
@@ -99,19 +104,95 @@ boolean:
 
 char:
   1 Byte!
+  ASCII code: 256 possible values.
+
+
+---
+
+CPU, ALU
+BIT - Binary digIT
+Byte = 8  bits
+1K = 1024 = 2^10 ~= 1e3
+1M = 2^20        ~= 1e6
+1G = 2^30        ~= 1e9
+
+Word: Depending on OS/CPU. The basic unit of bits processed by the CPU.
 
 ---
 
 casting:
 Type of result depends only on the type of operands.
  a / (double)b
+Only two casts tested: (int) and (double)
 
 Promoting data types:    double + int -->  double
 
----
 
+---
+Relational operators:
+==, !=, <,<=, >, >=
+
+---
+Arithmetic operators:
++ , - , * , / , %
+
+---
+Assignment operators:
+ = , += , -=, *=, /=, %=
+
+---
+String operator:
+String concatenation: +
+
+---
 Logical operators:    ||  ,   &&,   !
 
+DeMorgan's law:    (prove by Truth table)
+!(P && Q) = !P || !Q
+!(P || Q) = !P && !Q
+
+=====
+Not part of the AP operators:
+bitwise , shifts >> or  <<
+conditional ()? :
+
+
+---
+
+flow control:
+
+if ( condition_boolean ) {
+
+}
+
+while ( condition_boolean ) {
+
+}
+
+Patterns:
+int idx=0;
+while (idx<str.length()) {
+  // check something
+  String tmp = str.substring(idx,idx+1);
+
+  ....
+
+  idx++;
+}
+
+
+for ( initial_statement  ; condition_boolean ;  final_statement ) {
+
+}
+translates to:
+initial_statement  ;
+while ( condition_boolean) {
+
+final_statement;
+}
+
+
+----
 
 Strings (we will visit again!)
 a class, not primitive type!!
@@ -175,6 +256,36 @@ Things you do not need to master, just know they exist:
 switch()
 (...) ? oneCase : twoCase
 
+===
+
+Patterns:
+1. Go over elements of a String:
+for (int i=0; ii<str.length() ; i++) {
+  String tmp = str.substring(i,i+1) ;
+
+}
+
+2. Check neighbouring elements:
+WATCH out for EDGE cases.
+for (int i=0; ii<str.length() ; i++) {
+  if (i>0 && i<str.length()-1)
+      do_something;
+  if (i==0)
+      do_something_else;
+  if (i==str.length()-1)
+      do_something_totally_else;
+}
+
+3. Going backward on a string:
+   for (int i=str.length() ; i>=0 ; i--)
+
+4. Going in jumps:
+   for (int i=0; i<10; i+=2)
+
+5. indexOf is jumping around --> Works well with while()
+6. for_loops are for going on all elements, one by one.
+
+* COMMENTing not working code. Don't destroy.
 
 ===
 
@@ -202,6 +313,7 @@ public void draw(double d){}
 
 
 Pass by value - Switch program
+
 
 ===
 SPECIAL METHODS
