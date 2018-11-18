@@ -1,0 +1,65 @@
+
+
+Rebecca:
+https://codingbat.com/prob/p233703 - shopCost - Logic.
+https://codingbat.com/prob/p294733 - enterNew - String operation.
+https://codingbat.com/prob/p277568 -     - Nested loops. Integer array, repeatMe by squared times.
+
+Max:
+https://codingbat.com/prob/p221935 - notForward - Reverse an array.
+https://codingbat.com/prob/p246062 - decendingOrder - Fill in an array.
+https://codingbat.com/prob/p247049 - dayOff - Nested loops. Array of Strings.
+
+
+Benny:
+https://codingbat.com/prob/p225820 - subnum - Array.
+https://codingbat.com/prob/p278995 - LumberTime - Logic.
+https://codingbat.com/prob/p200759 - Repeat Array - Nested loops.
+
+Julia:
+https://codingbat.com/prob/p272777 - numSum - Factorial.
+https://codingbat.com/prob/p263269 - repeatWord - For() loop and String.
+
+Rhea:
+https://codingbat.com/prob/p238463 - dogWalk - Logic.
+https://codingbat.com/prob/p232138 - camp    - Logic.
+https://codingbat.com/prob/p223903 - Space   - Nested loops. Array of Strings.
+
+Daniel:
+https://codingbat.com/prob/p253681 - arraySum - 1D array.
+https://codingbat.com/prob/p264647 - determinant - Calculate determinant of 2x2 or 3x3 matrix.
+https://codingbat.com/prob/p207955 - pythagTrip - Nested loops. Pythagorean Triples.
+
+Omer:
+https://codingbat.com/prob/p200663 - divisible - 1D Array + % operator
+https://codingbat.com/prob/p204393 - addArray - 1D array combined.
+https://codingbat.com/prob/p271268 - nestedArray - repeat as index.
+
+Harrison:
+https://codingbat.com/prob/p218620 - reverse - Reverse an array.
+https://codingbat.com/prob/p288977 - primes  - find prime numbers. Involves multiple steps: finding all the primes requested, and then adjusting size of array.
+https://codingbat.com/prob/p226210 - Count_S - Nested loops. Array of Strings, and search within each String.
+
+Zach:
+https://codingbat.com/prob/p251651 - encodeString - Involves (or at least much easier to do with) things we did not learn (charAt())
+https://codingbat.com/prob/p216555 - sortInts - Sorting. <-- We will learn how to do it in about 3 months... But you are welcome to try. Usually involved nested loops.
+https://codingbat.com/prob/p205886 - howManyTimes - Nested loops. Look for one array elements within another.
+
+Sanjay:
+https://codingbat.com/prob/p251192 - reverseString - String/for
+https://codingbat.com/prob/p223639 - maxMinDiff - array max/min
+
+Aviv:
+https://codingbat.com/prob/p297168 - replaceStringArray - array and Strings!
+https://codingbat.com/prob/p229510 - separateString - Nested loops. Array and Strings
+
+Jasper:
+https://codingbat.com/prob/p210715 - makeString - indexing.
+https://codingbat.com/prob/p265782 - flipEven   - Nice variation of flipping/reversing an array.
+https://codingbat.com/prob/p249103 - countCharString - Nested loops. Motif of the makeString by the same author.
+
+Will:
+https://codingbat.com/prob/p204596  - solveDL  - Modulo arithmetic.
+https://codingbat.com/prob/p244996  - convertBinary - Convert to binary array-style (as opposed to String style)
+
+==== End

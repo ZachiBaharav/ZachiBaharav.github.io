@@ -371,4 +371,50 @@ ARRAYS AND ARRAY-LIKE STRUCTURES
   ARRAYLISTS (e.g., ArrayList<Object> a)
 
 
+
+Array
+int[] A;   // declaring
+// right now, A[0] will be an error: No memory assigned yet!!
+A = new int[9];  // Assigns space in memory
+// indexing: 0 .. (A.length-1)
+
+int[] B = {1,2,3};
+String[] S = {"first","second"};
+
+===
+Patterns:
+1.   Go over all elements:
+for (int ii=0; ii<A.length ; ++ii)
+
+2. Looking for max/min value
+
+max = Integer.MIN_VALUE;
+for (ii=0; ii<A.length ; ++ii)
+   if (A[ii]>max)
+      max = A[ii];
+
+
+Alternative:
+max = A[0];
+
+
+3. Boolean flag:
+   boolean addThese = true;
+
+   ...
+
+4. Adding (and removing) values IS tricky: The array doesn't shrink nor stretches.
+
+
+====
+Debugging
+
+0. READ the error message.
+1. Look again, with critical eyes (Syntax..)
+2. If it's syntax: try and write again!
+3. Run time error:
+ step through the code. With specific example, or specific value.
+
+ 5. Rewrite in different way.
+
 === End ===
