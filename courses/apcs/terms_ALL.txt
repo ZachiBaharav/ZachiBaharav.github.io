@@ -334,6 +334,14 @@ Class
 this
 Static methods/variables : Class .vs. instance .  Account number.
 
+Static method - belongs to the Class. No need for object to get it rolling.
+for example, Math.random()
+Another example: accountNumber
+Does not have the normal object variables.
+
+Non static method: Needs an object! Have the object variables, context (this).
+
+
 ===
 Inheritance
 
