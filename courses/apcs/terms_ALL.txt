@@ -45,28 +45,6 @@ Naming:
     methods and variables start in lowerCase, using camelCase convention:  addInterest( double sum)
     Constants may use all capitals and underscore between words: SUN_DISTANCE
 
-Class:
-  One class per file.
-  Same name as file.
-  Keywords: class, public/private/protected (<- no need to know protected), static, import, final
-
-  Constructor(s):
-    same name as class
-    not return type specified
-    can have multiple constructors
-
-  Fields, aka Instance variables
-  Methods, aka functions
-
-  Object: An instance of the class.
-
-  Accessors /  Selectors
-  Modifiers /  Mutators
-
-
-toString()
-  Converts the object to a string
-
 
 Reserved words (keywords). About 53 of them. Examples:
 public, private, static, void, int, double
@@ -330,6 +308,29 @@ GUI TERMS
 ===
 Class
 
+  One class per file.
+  Same name as file.
+  Keywords: class, public/private/protected (<- no need to know protected), static, import, final
+
+  Constructor(s):
+    same name as class
+    not return type specified
+    can have multiple constructors
+
+  Fields, aka Instance variables
+  Methods, aka functions
+
+  Object: An instance of the class.
+
+  Accessors /  Selectors
+  Modifiers /  Mutators
+
+
+toString()
+  Converts the object to a string
+
+
+
 
 this
 Static methods/variables : Class .vs. instance .  Account number.
@@ -388,6 +389,21 @@ A = new int[9];  // Assigns space in memory
 
 int[] B = {1,2,3};
 String[] S = {"first","second"};
+
+
+2D Arrays:
+int[][] A2;
+A2.length  <-- Number of rows
+A2[0].length  <-- number of columns
+
+Nested for loops:
+   for (int rr=0; rr<ROWS; ++rr)
+      for (int cc=0; cc<COLS; ++cc){
+
+
+      }
+
+
 
 ===
 Patterns:
