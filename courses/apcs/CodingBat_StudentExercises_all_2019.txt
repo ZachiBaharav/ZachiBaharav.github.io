@@ -1,0 +1,7 @@
+
+Rebecca
+https://codingbat.com/prob/p255206 - Logic (phrasing)   ***
+https://codingbat.com/prob/p299733 - String backward
+https://codingbat.com/prob/p238325 - Sort array in descending order
+https://codingbat.com/prob/p237253 - String: replace value    ***
+https://codingbat.com/prob/p257327 - String?!? <-- not completed yet.
