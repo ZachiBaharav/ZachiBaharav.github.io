@@ -5,3 +5,49 @@ https://codingbat.com/prob/p299733 - String backward
 https://codingbat.com/prob/p238325 - Sort array in descending order
 https://codingbat.com/prob/p237253 - String: replace value    ***
 https://codingbat.com/prob/p257327 - String?!? <-- not completed yet.
+
+Benny
+https://codingbat.com/prob/p235851 - String - middleReplace ***
+https://codingbat.com/prob/p200759 - Arrays nested loop ***
+https://codingbat.com/prob/p226224 - Populate array ?!? <- not completed (phrasing, content)
+https://codingbat.com/prob/p265044 - Logic (too simple)
+https://codingbat.com/prob/p268670 - Array single loop **
+
+Julia
+https://codingbat.com/prob/p202989 - Array (She means Multiply!)
+https://codingbat.com/prob/p267328 - String and spaces   ***
+https://codingbat.com/prob/p226298 - Logic (of course, assuming you DO buy a dress) ***
+https://codingbat.com/prob/p214818 - Loop (almost exponents: Why almost?)
+
+Rhea
+https://codingbat.com/prob/p258748 - Logic ***
+https://codingbat.com/prob/p270540 - String ***
+https://codingbat.com/prob/p214180 - Array
+https://codingbat.com/prob/p260155 - Nested loops *** (confusing confusing phrasing)
+https://codingbat.com/prob/p226287 - Strings (nice) ***
+
+Omer
+https://codingbat.com/prob/p269865 - Logic
+https://codingbat.com/prob/p243206 - String? Nice (look at the hint) ***
+https://codingbat.com/prob/p226544 - array
+https://codingbat.com/prob/p248155 - Nested loop in array of strings. ***
+https://codingbat.com/prob/p269528 - While loop. Is this factoring? ***
+
+
+Daniel
+https://codingbat.com/prob/p223415 - Array loop. If you are into Calculus.
+https://codingbat.com/prob/p220247 - Logic ***
+https://codingbat.com/prob/p211404 - String: Jake Darnell?!?
+https://codingbat.com/prob/p292225 - Nested loops. Arrays. ***
+https://codingbat.com/prob/p222605 - Logic?!? I am not sure. You get full credit for understanding the question.
+
+Jasper
+https://codingbat.com/prob/p218872 - String ***
+https://codingbat.com/prob/p293977 - String <-- harder! ***
+https://codingbat.com/prob/p224225 - Nice, but the phrasing is misleading. Look at the examples.
+
+Will
+https://codingbat.com/prob/p285137 - String/Array.
+https://codingbat.com/prob/p221573 - nested loop ***
+
+====
