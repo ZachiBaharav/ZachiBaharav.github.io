@@ -1,0 +1,79 @@
+,
+
+
+
+
+
+
+
+
+
+
+
+{
+    "clueType": "Clue-1",
+    "clueRow": 0,
+    "clueCol": 2,  
+    "clueRowSpan": 1,
+    "clueColSpan": 1,
+    "clueRowStart": 0,
+    "clueColStart": 3,
+    "clueText": "Cuban Author\n (3,6)",
+    "clueDirection": "a"
+  },
+  {
+    "clueType": "Arrow",
+    "clueRow": 1,
+    "clueCol": 7,  
+    "clueRowSpan": 1,
+    "clueColSpan": 1,
+    "clueArrowDirection": "Wr_rd"
+  },
+  {
+    "clueRow": 3,
+    "clueCol": 5,  
+    "clueRowSpan": 1,
+    "clueColSpan": 1,
+    "clueType": "Arrow",
+    "clueArrowDirection": "Wr"
+  },
+  {
+    "clueRow": 3,
+    "clueCol": 6,  
+    "clueRowSpan": 1,
+    "clueColSpan": 1,
+    "clueType": "Arrow",
+    "clueArrowDirection": "Wrd"
+  },
+  {
+    "clueRow": 3,
+    "clueCol": 7,  
+    "clueRowSpan": 1,
+    "clueColSpan": 1,
+    "clueType": "Arrow",
+    "clueArrowDirection": "Nd"
+  },
+  {
+    "clueRow": 3,
+    "clueCol": 8,  
+    "clueRowSpan": 1,
+    "clueColSpan": 1,
+    "clueType": "Arrow",
+    "clueDirection": "Ndr"
+  },
+  {
+    "clueRow": 3,
+    "clueCol": 9,  
+    "clueRowSpan": 1,
+    "clueColSpan": 1,
+    "clueType": "Arrow",
+    "clueDirection": "Eld"
+  },
+  {
+    "clueRow": 3,
+    "clueCol": 10,  
+    "clueRowSpan": 1,
+    "clueColSpan": 1,
+    "clueType": "Arrow",
+    "clueDirection": "Sur"
+  }
