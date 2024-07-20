@@ -1,0 +1,347 @@
+{
+    "metaRows": "6",
+    "metaCols": "6",
+    "metaName": "Mini-1",
+
+    "metaClues":[
+        {
+        "clueType": "Image",
+        "clueRow": 0,
+        "clueCol": 0,
+        "clueRowSpan": 2,
+        "clueColSpan": 2,
+        "clueRowStart": 0,
+        "clueColStart": 2,
+        "clueText": "",
+        "clueDirection": "d",
+        "clueResource": "assets/puz3/images/EinsteinSmall101x101.png",
+        "clueRowStart2": 0,
+        "clueColStart2": 2,
+        "clueDirection2": "h"
+        },
+        {
+        "clueType": "Clue-1",
+        "clueRow": 0,
+        "clueCol": 2,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueRowStart": 0,
+        "clueColStart": 3,
+        "clueText": "upside down W",
+        "clueFontSize": "n",
+        "clueDirection": "d"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 0,
+        "clueCol": 3,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Wrd",
+        "clueTrueLetter": "E"
+        },
+        {
+        "clueType": "Clue-2",
+        "clueRow": 0,
+        "clueCol": 4,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueRowStart": 0,
+        "clueColStart": 5,
+        "clueText": "Light particle",
+        "clueFontSize": "s",
+        "clueDirection": "d",
+        "clueRowStart2": 1,
+        "clueColStart2": 4,
+        "clueText2": "😃 or 🙏",
+        "clueFontSize2": "s",
+        "clueDirection2": "d"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 0,
+        "clueCol": 5,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Wrd",
+        "clueTrueLetter": "P"
+        },
+        {
+        "clueType": "Clue-2",
+        "clueRow": 1,
+        "clueCol": 2,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueRowStart": 1,
+        "clueColStart": 4,
+        "clueText": "so-so",
+        "clueFontSize": "n",
+        "clueDirection": "a",
+        "clueRowStart2": 2,
+        "clueColStart2": 3,
+        "clueText2": "Arrogant",
+        "clueFontSize2": "s",
+        "clueDirection2": "d"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 1,
+        "clueCol": 3,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Wr-h",
+        "clueTrueLetter": "M"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 1,
+        "clueCol": 4,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Nd",
+        "clueTrueLetter": "E"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 1,
+        "clueCol": 5,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "H"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 2,
+        "clueCol": 0,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Sur",
+        "clueTrueLetter": "L"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 2,
+        "clueCol": 1,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Nd",
+        "clueTrueLetter": "E"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 2,
+        "clueCol": 2,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Nd",
+        "clueTrueLetter": "S"
+        },
+        {
+        "clueType": "Image",
+        "clueRow": 2,
+        "clueCol": 3,  
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueRowStart": 2,
+        "clueColStart": 4,
+        "clueText": "",
+        "clueDirection": "a",
+        "clueResource": "assets/puz3/images/MissouriColored_small.png"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 2,
+        "clueCol": 4,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Wr",
+        "clueTrueLetter": "M"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 2,
+        "clueCol": 5,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "O"
+        },
+        {
+        "clueType": "Clue-2",
+        "clueRow": 3,
+        "clueCol": 0,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueRowStart": 2,
+        "clueColStart": 0,
+        "clueText": "___ Misérables",
+        "clueFontSize": "s",
+        "clueDirection": "a",
+        "clueRowStart2": 3,
+        "clueColStart2": 1,
+        "clueText2": "Gold bar",
+        "clueFontSize2": "n",
+        "clueDirection2": "a"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 3,
+        "clueCol": 1,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Wr-d",
+        "clueTrueLetter": "I"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 3,
+        "clueCol": 2,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "N"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 3,
+        "clueCol": 3,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "G"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 3,
+        "clueCol": 4,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "O"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 3,
+        "clueCol": 5,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "T"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 4,
+        "clueCol": 0,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Sur",
+        "clueTrueLetter": "U"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 4,
+        "clueCol": 1,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "N"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 4,
+        "clueCol": 2,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "O"
+        },
+        {
+        "clueType": "Clue-1",
+        "clueRow": 4,
+        "clueCol": 3,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueRowStart": 4,
+        "clueColStart": 4,
+        "clueText": "Scottish sweetheart",
+        "clueFontSize": "s",
+        "clueDirection": "a"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 4,
+        "clueCol": 4,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "Wr",
+        "clueTrueLetter": "J"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 4,
+        "clueCol": 5,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "O"
+        },
+        {
+        "clueType": "Clue-1",
+        "clueRow": 5,
+        "clueCol": 0,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueRowStart": 4,
+        "clueColStart": 0,
+        "clueText": "Card game",
+        "clueFontSize": "n",
+        "clueDirection": "a"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 5,
+        "clueCol": 1,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "cont_top_to_right",
+        "clueTrueLetter": "S"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 5,
+        "clueCol": 2,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "T"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 5,
+        "clueCol": 3,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "E"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 5,
+        "clueCol": 4,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "I"
+        },
+        {
+        "clueType": "Letter",
+        "clueRow": 5,
+        "clueCol": 5,
+        "clueRowSpan": 1,
+        "clueColSpan": 1,
+        "clueArrowDirection": "",
+        "clueTrueLetter": "N"
+        }
+    ]
+}

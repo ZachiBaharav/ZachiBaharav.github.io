@@ -1,0 +1,643 @@
+{
+  "metaRows": "8",
+  "metaCols": "8",
+  "metaName": "Kehillah-Dennis",
+  "metaClues": [
+    {
+      "clueType": "Image",
+      "clueRow": 0,
+      "clueCol": 0,
+      "clueRowSpan": 2,
+      "clueColSpan": 2,
+      "clueRowStart": 1,
+      "clueColStart": 2,
+      "clueText": "",
+      "clueDirection": "a",
+      "clueResource": "Dennis124x124.png"
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 0,
+      "clueCol": 1
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 0,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 0,
+      "clueColStart": 3,
+      "clueText": "Cool",
+      "clueFontSize": "s",
+      "clueDirection": "d",
+      "clueRowStart2": 1,
+      "clueColStart2": 2,
+      "clueText2": "Wake up",
+      "clueFontSize2": "s",
+      "clueDirection2": "d"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 0,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wrd-h",
+      "clueTrueLetter": "R"
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 0,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 0,
+      "clueColStart": 5,
+      "clueText": "Like",
+      "clueFontSize": "s",
+      "clueDirection": "a",
+      "clueRowStart2": 0,
+      "clueColStart2": 5,
+      "clueText2": "Band from 🇸🇪",
+      "clueFontSize2": "l",
+      "clueDirection2": "d"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 0,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr_rd",
+      "clueTrueLetter": "A"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 0,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Eld-h",
+      "clueTrueLetter": "S"
+    },
+    {
+      "clueType": "Image",
+      "clueRow": 0,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 2,
+      "clueColStart": 7,
+      "clueText": "",
+      "clueDirection": "d",
+      "clueResource": "Simba124x124.png"
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 1,
+      "clueCol": 0
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 1,
+      "clueCol": 1
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr_Nd",
+      "clueTrueLetter": "R"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "A"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "B"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "B"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Clue-1",
+      "clueRow": 1,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 2,
+      "clueColStart": 7,
+      "clueText": "🇮🇱",
+      "clueFontSize": "v",
+      "clueDirection": "d"
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 2,
+      "clueCol": 0,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 2,
+      "clueColStart": 1,
+      "clueText": "Past do",
+      "clueFontSize": "s",
+      "clueDirection": "a",
+      "clueRowStart2": 3,
+      "clueColStart2": 0,
+      "clueText2": "___ Misérables",
+      "clueFontSize2": "s",
+      "clueDirection2": "a"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 1,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr-h_Nd",
+      "clueTrueLetter": "D"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "D"
+    },
+    {
+      "clueType": "Clue-1",
+      "clueRow": 2,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 2,
+      "clueColStart": 5,
+      "clueText": "Body measure",
+      "clueFontSize": "n",
+      "clueDirection": "a"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr",
+      "clueTrueLetter": "B"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "M"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Nd",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 0,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Ndr",
+      "clueTrueLetter": "L"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 1,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "E"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "S"
+    },
+    {
+      "clueType": "Image",
+      "clueRow": 3,
+      "clueCol": 3,
+      "clueRowSpan": 2,
+      "clueColSpan": 2,
+      "clueRowStart": 5,
+      "clueColStart": 3,
+      "clueText": "",
+      "clueDirection": "a",
+      "clueResource": "Rams.png"
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 3,
+      "clueCol": 4
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Sur",
+      "clueTrueLetter": "A"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "B"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "S"
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 4,
+      "clueCol": 0,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 4,
+      "clueColStart": 1,
+      "clueText": "Opposite of SW",
+      "clueFontSize": "s",
+      "clueDirection": "",
+      "clueRowStart2": 5,
+      "clueColStart2": 0,
+      "clueText2": " Not off",
+      "clueFontSize2": "s",
+      "clueDirection2": "a"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 1,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr-h",
+      "clueTrueLetter": "N"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "E"
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 4,
+      "clueCol": 3
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 4,
+      "clueCol": 4
+    },
+		{
+			"clueType": "Clue-2",
+			"clueRow": 4,
+			"clueCol": 5,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueRowStart": 5,
+			"clueColStart": 5,
+			"clueText": "Core musc.",
+			"clueFontSize": "s",
+			"clueDirection": "d",
+			"clueRowStart2": 6,
+			"clueColStart2": 6,
+			"clueText2": "Little Rock, __",
+			"clueFontSize2": "n",
+			"clueDirection2": "a"
+		},
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr",
+      "clueTrueLetter": "A"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "R"
+    },
+
+		{
+			"clueType": "Letter",
+			"clueRow": 5,
+			"clueCol": 0,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "Ndr",
+			"clueTrueLetter": "O"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 5,
+			"clueCol": 1,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "N"
+		},
+    {
+			"clueType": "Clue-2",
+			"clueRow": 5,
+			"clueCol": 2,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueRowStart": 5,
+			"clueColStart": 3,
+			"clueText": "Cell messanger",
+			"clueFontSize": "s",
+			"clueDirection": "d",
+			"clueRowStart2": 6,
+			"clueColStart2": 2,
+			"clueText2": "Added play",
+			"clueFontSize2": "s",
+			"clueDirection2": "d"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 5,
+			"clueCol": 3,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "Wrd_Ndr",
+			"clueTrueLetter": "R"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 5,
+			"clueCol": 4,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "A"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 5,
+			"clueCol": 5,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "Eld-h",
+			"clueTrueLetter": "M"
+		},
+		{
+			"clueType": "Clue-2",
+			"clueRow": 5,
+			"clueCol": 6,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueRowStart": 5,
+			"clueColStart": 5,
+			"clueText": "Crowd",
+			"clueFontSize": "n",
+			"clueDirection": "d",
+			"clueRowStart2": 6,
+			"clueColStart2": 6,
+			"clueText2": "μ+1",
+			"clueFontSize2": "n",
+			"clueDirection2": "d"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 5,
+			"clueCol": 7,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "A"
+		},
+		{
+			"clueType": "Clue-2",
+			"clueRow": 6,
+			"clueCol": 0,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueRowStart": 6,
+			"clueColStart": 1,
+			"clueText": "H+",
+			"clueFontSize": "s",
+			"clueDirection": "a",
+			"clueRowStart2": 7,
+			"clueColStart2": 0,
+			"clueText2": "Ottoman's Capital",
+			"clueFontSize2": "s",
+			"clueDirection2": ""
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 6,
+			"clueCol": 1,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "Wr-h",
+			"clueTrueLetter": "I"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 6,
+			"clueCol": 2,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "Nd",
+			"clueTrueLetter": "O"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 6,
+			"clueCol": 3,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "N"
+		},
+    {
+      "clueType": "Image",
+      "clueRow": 6,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 6,
+      "clueColStart": 5,
+      "clueText": "",
+      "clueDirection": "d",
+      "clueResource": "sqrt16.png"
+    },
+
+		{
+			"clueType": "Letter",
+			"clueRow": 6,
+			"clueCol": 5,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "Wr",
+			"clueTrueLetter": "O"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 6,
+			"clueCol": 6,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "Nd",
+			"clueTrueLetter": "N"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 6,
+			"clueCol": 7,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "E"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 7,
+			"clueCol": 0,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "Ndr",
+			"clueTrueLetter": "I"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 7,
+			"clueCol": 1,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "S"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 7,
+			"clueCol": 2,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "T"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 7,
+			"clueCol": 3,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "A"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 7,
+			"clueCol": 4,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "N"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 7,
+			"clueCol": 5,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "B"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 7,
+			"clueCol": 6,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "U"
+		},
+		{
+			"clueType": "Letter",
+			"clueRow": 7,
+			"clueCol": 7,
+			"clueRowSpan": 1,
+			"clueColSpan": 1,
+			"clueArrowDirection": "",
+			"clueTrueLetter": "L"
+		}
+	]
+}

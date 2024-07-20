@@ -1,0 +1,909 @@
+
+
+{
+  "metaHeader": {
+    "cols": 8,
+    "rows": 8,
+    "name": "Italy1",
+    "imgLocation": "assets/daily/",
+    "theme": "🇮🇹",
+    "levelTitles": [
+      "Principiante (Beginner)", 
+      "Dilettante (Hobbyist)",
+      "Esperto (Expert)", 
+      "Professionista (Professional)",
+      "Maestro (Master)"]
+  },
+  "metaCells": [
+    [
+      {
+        "cellType": "Image",
+        "cellRow": 0,
+        "cellCol": 0,
+        "cellRowSpan": 2,
+        "cellColSpan": 2,
+        "cellResource": "Roman_Holiday_200x200.png",        
+        "clues": [
+          {
+            "Direction": "d",
+            "Answer": "Roman",
+            "AnswerRowStart": 1,
+            "AnswerColStart": 2,
+            "ArrowDirection": "rd",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
+          },
+          {
+            "Direction": "a",
+            "Answer": "Holiday",
+            "AnswerRowStart": 2,
+            "AnswerColStart": 1,
+            "ArrowDirection": "dr",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
+          }
+        ],
+        "showCorrect":false,
+        "showWrong":false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Void",
+        "cellRow": 0,
+        "cellCol": 0
+      },
+      {
+        "cellType": "Clue-2",
+        "cellRow": 0,
+        "cellCol": 2,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "Musical G",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "SOL",
+            "AnswerRowStart": 0,
+            "AnswerColStart": 3,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "rd"
+          },
+          {
+            "Text": "Go bad",
+            "FontSize": "zSmall-font",
+            "Direction": "a",
+            "Answer": "ROT",
+            "AnswerRowStart": 1,
+            "AnswerColStart": 2,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "dr"
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 0,
+        "cellCol": 3,
+        "cellLetter": "",
+        "cellTrueLetter": "S",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-1",
+        "cellRow": 0,
+        "cellCol": 4,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "River in Rome",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "TIBER",
+            "AnswerRowStart": 1,
+            "AnswerColStart": 4,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "d",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-1",
+        "cellRow": 0,
+        "cellCol": 5,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "The devil wears this",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "PRADA",
+            "AnswerRowStart": 0,
+            "AnswerColStart": 6,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "rd",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 0,
+        "cellCol": 6,
+        "cellLetter": "",
+        "cellTrueLetter": "P",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-1",
+        "cellRow": 0,
+        "cellCol": 7,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "👁️",
+            "FontSize": "zVeryLarge-font",
+            "Direction": "d",
+            "Answer": "EYE",
+            "AnswerRowStart": 1,
+            "AnswerColStart": 7,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "d",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
+          }
+        ],
+        "cellClasses": ""
+      }
+    ],
+    [
+      {
+        "cellType": "Void",
+        "cellRow": 1,
+        "cellCol": 0
+      },
+      {
+        "cellType": "Void",
+        "cellRow": 1,
+        "cellCol": 1
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 1,
+        "cellCol": 2,
+        "cellLetter": "",
+        "cellTrueLetter": "R",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 1,
+        "cellCol": 3,
+        "cellLetter": "",
+        "cellTrueLetter": "O",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 1,
+        "cellCol": 4,
+        "cellLetter": "",
+        "cellTrueLetter": "T",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-2",
+        "cellRow": 1,
+        "cellCol": 5,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "Email ans.",
+            "FontSize": "zSmall-font",
+            "Direction": "a",
+            "Answer": "RE",
+            "AnswerRowStart": 1,
+            "AnswerColStart": 6,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "r"
+          },
+          {
+            "Text": "Spanish title",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "DON",
+            "AnswerRowStart": 2,
+            "AnswerColStart": 5,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "d"
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 1,
+        "cellCol": 6,
+        "cellLetter": "",
+        "cellTrueLetter": "R",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 1,
+        "cellCol": 7,
+        "cellLetter": "",
+        "cellTrueLetter": "E",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      }
+    ],
+    [
+      {
+        "cellType": "Clue-2",
+        "cellRow": 2,
+        "cellCol": 0,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "Ciao",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "HI",
+            "AnswerRowStart": 2,
+            "AnswerColStart": 1,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "rd"
+          },
+          {
+            "Text": "Not bright",
+            "FontSize": "zSmall-font",
+            "Direction": "a",
+            "Answer": "DIM",
+            "AnswerRowStart": 3,
+            "AnswerColStart": 0,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "dr"
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 2,
+        "cellCol": 1,
+        "cellLetter": "",
+        "cellTrueLetter": "H",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 2,
+        "cellCol": 2,
+        "cellLetter": "",
+        "cellTrueLetter": "O",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 2,
+        "cellCol": 3,
+        "cellLetter": "",
+        "cellTrueLetter": "L",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 2,
+        "cellCol": 4,
+        "cellLetter": "",
+        "cellTrueLetter": "I",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 2,
+        "cellCol": 5,
+        "cellLetter": "",
+        "cellTrueLetter": "D",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 2,
+        "cellCol": 6,
+        "cellLetter": "",
+        "cellTrueLetter": "A",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 2,
+        "cellCol": 7,
+        "cellLetter": "",
+        "cellTrueLetter": "Y",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      }
+    ],
+    [
+      {
+        "cellType": "Letter",
+        "cellRow": 3,
+        "cellCol": 0,
+        "cellLetter": "",
+        "cellTrueLetter": "D",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 3,
+        "cellCol": 1,
+        "cellLetter": "",
+        "cellTrueLetter": "I",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+
+      {
+        "cellType": "Letter",
+        "cellRow": 3,
+        "cellCol": 2,
+        "cellLetter": "",
+        "cellTrueLetter": "M",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-2",
+        "cellRow": 3,
+        "cellCol": 3,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "Foretell",
+            "FontSize": "zSmall-font",
+            "Direction": "a",
+            "Answer": "BODE",
+            "AnswerRowStart": 3,
+            "AnswerColStart": 4,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "r"
+          },
+          {
+            "Text": "Simba's sound",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "ROAR",
+            "AnswerRowStart": 4,
+            "AnswerColStart": 3,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "d"
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 3,
+        "cellCol": 4,
+        "cellLetter": "",
+        "cellTrueLetter": "B",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 3,
+        "cellCol": 5,
+        "cellLetter": "",
+        "cellTrueLetter": "O",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 3,
+        "cellCol": 6,
+        "cellLetter": "",
+        "cellTrueLetter": "D",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 3,
+        "cellCol": 7,
+        "cellLetter": "",
+        "cellTrueLetter": "E",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      }
+    ],
+    [
+      {
+        "cellType": "Clue-1",
+        "cellRow": 4,
+        "cellCol": 0,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "Addressing a judge (w/ 'your')",
+            "FontSize": "zSmall-font",
+            "Direction": "a",
+            "Answer": "HONOR",
+            "AnswerRowStart": 5,
+            "AnswerColStart": 0,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "dr",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-2",
+        "cellRow": 4,
+        "cellCol": 1,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "Gladiator's playground",
+            "FontSize": "zSmall-font",
+            "Direction": "a",
+            "Answer": "ARENA",
+            "AnswerRowStart": 4,
+            "AnswerColStart": 2,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "r"
+          },
+          {
+            "Text": "Not on",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "OFF",
+            "AnswerRowStart": 5,
+            "AnswerColStart": 1,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "d"
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 4,
+        "cellCol": 2,
+        "cellLetter": "",
+        "cellTrueLetter": "A",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 4,
+        "cellCol": 3,
+        "cellLetter": "",
+        "cellTrueLetter": "R",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },      
+      {
+        "cellType": "Letter",
+        "cellRow": 4,
+        "cellCol": 4,
+        "cellLetter": "",
+        "cellTrueLetter": "E",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 4,
+        "cellCol": 5,
+        "cellLetter": "",
+        "cellTrueLetter": "N",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },      
+      {
+        "cellType": "Letter",
+        "cellRow": 4,
+        "cellCol": 6,
+        "cellLetter": "",
+        "cellTrueLetter": "A",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-1",
+        "cellRow": 4,
+        "cellCol": 7,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "Vital energy",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "CHI",
+            "AnswerRowStart": 5,
+            "AnswerColStart": 7,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "d"
+          }
+        ],
+        "cellClasses": ""
+      }
+    ],
+    [
+      {
+        "cellType": "Letter",
+        "cellRow": 5,
+        "cellCol": 0,
+        "cellLetter": "",
+        "cellTrueLetter": "H",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 5,
+        "cellCol": 1,
+        "cellLetter": "",
+        "cellTrueLetter": "O",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 5,
+        "cellCol": 2,
+        "cellLetter": "",
+        "cellTrueLetter": "N",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 5,
+        "cellCol": 3,
+        "cellLetter": "",
+        "cellTrueLetter": "O",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 5,
+        "cellCol": 4,
+        "cellLetter": "",
+        "cellTrueLetter": "R",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-1",
+        "cellRow": 5,
+        "cellCol": 5,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "North of CT",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "MA",
+            "AnswerRowStart": 6,
+            "AnswerColStart": 5,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "d"
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-1",
+        "cellRow": 5,
+        "cellCol": 6,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "Place to triage",
+            "FontSize": "zSmall-font",
+            "Direction": "d",
+            "Answer": "ER",
+            "AnswerRowStart": 6,
+            "AnswerColStart": 6,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "d"
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 5,
+        "cellCol": 7,
+        "cellLetter": "",
+        "cellTrueLetter": "C",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      }
+    ],
+    [
+      {
+        "cellType": "Image",
+        "cellRow": 6,
+        "cellCol": 0,
+        "cellRowSpan": 2,
+        "cellColSpan": 1,
+        "cellResource": "Ferrari_200_400.png",        
+        "clues": [
+          {
+            "Direction": "a",
+            "Answer": "FERRARI",
+            "AnswerRowStart": 7,
+            "AnswerColStart": 1,
+            "ArrowDirection": "r",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
+          }
+        ],
+        "showCorrect":false,
+        "showWrong":false,
+        "cellClasses": ""
+      },
+  
+      {
+        "cellType": "Letter",
+        "cellRow": 6,
+        "cellCol": 1,
+        "cellLetter": "",
+        "cellTrueLetter": "F",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Image",
+        "cellRow": 6,
+        "cellCol": 2,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "cellResource": "Alpha_200_200.png",        
+        "clues": [
+          {
+            "Direction": "a",
+            "Answer": "A",
+            "AnswerRowStart": 6,
+            "AnswerColStart": 3,
+            "ArrowDirection": "r",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
+          }
+        ],
+        "showCorrect":false,
+        "showWrong":false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 6,
+        "cellCol": 3,
+        "cellLetter": "",
+        "cellTrueLetter": "A",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Clue-1",
+        "cellRow": 6,
+        "cellCol": 4,
+        "cellRowSpan": 1,
+        "cellColSpan": 1,
+        "clues": [
+          {
+            "Text": "So-So",
+            "FontSize": "zSmall-font",
+            "Direction": "a",
+            "Answer": "MEH",
+            "AnswerRowStart": 6,
+            "AnswerColStart": 5,
+            "showCorrect":false,
+            "showWrong":false,
+            "ArrowDirection": "r"
+          }
+        ],
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 6,
+        "cellCol": 5,
+        "cellLetter": "",
+        "cellTrueLetter": "M",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 6,
+        "cellCol": 6,
+        "cellLetter": "",
+        "cellTrueLetter": "E",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 6,
+        "cellCol": 7,
+        "cellLetter": "",
+        "cellTrueLetter": "H",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      }
+    ],
+    [
+      {
+        "cellType": "Void",
+        "cellRow": 7,
+        "cellCol": 0
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 7,
+        "cellCol": 1,
+        "cellLetter": "",
+        "cellTrueLetter": "F",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 7,
+        "cellCol": 2,
+        "cellLetter": "",
+        "cellTrueLetter": "E",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 7,
+        "cellCol": 3,
+        "cellLetter": "",
+        "cellTrueLetter": "R",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 7,
+        "cellCol": 4,
+        "cellLetter": "",
+        "cellTrueLetter": "R",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 7,
+        "cellCol": 5,
+        "cellLetter": "",
+        "cellTrueLetter": "A",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 7,
+        "cellCol": 6,
+        "cellLetter": "",
+        "cellTrueLetter": "R",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      },
+      {
+        "cellType": "Letter",
+        "cellRow": 7,
+        "cellCol": 7,
+        "cellLetter": "",
+        "cellTrueLetter": "I",
+        "cellSelectedLetter" :  false,
+        "cellSelectedClueLetters" : false,
+        "cellClasses": ""
+      }           
+    ]
+  ]
+}
+

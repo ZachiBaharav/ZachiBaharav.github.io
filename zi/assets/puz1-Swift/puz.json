@@ -1,0 +1,640 @@
+{
+  "metaRows": "8",
+  "metaCols": "8",
+  "metaName": "Mini-2",
+  "metaClues": [
+    {
+      "clueType": "Clue-2",
+      "clueRow": 0,
+      "clueCol": 0,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 0,
+      "clueColStart": 1,
+      "clueText": "Small",
+      "clueFontSize": "s",
+      "clueDirection": "a",
+      "clueRowStart2": 1,
+      "clueColStart2": 0,
+      "clueText2": "Head rest",
+      "clueFontSize2": "s",
+      "clueDirection2": "d"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 0,
+      "clueCol": 1,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wrd-h",
+      "clueTrueLetter": "M"
+    },
+    {
+      "clueType": "Clue-1",
+      "clueRow": 0,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 1,
+      "clueColStart": 2,
+      "clueText": "Otter",
+      "clueFontSize": "n",
+      "clueDirection": "a"
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 0,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 0,
+      "clueColStart": 4,
+      "clueText": "Exists",
+      "clueFontSize": "s",
+      "clueDirection": "a",
+      "clueRowStart2": 0,
+      "clueColStart2": 4,
+      "clueText2": "Apple trademark",
+      "clueFontSize2": "s",
+      "clueDirection2": "d"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 0,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr_rd",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 0,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Eld-h",
+      "clueTrueLetter": "S"
+    },
+    {
+      "clueType": "Image",
+      "clueRow": 0,
+      "clueCol": 6,
+      "clueRowSpan": 2,
+      "clueColSpan": 2,
+      "clueRowStart": 0,
+      "clueColStart": 5,
+      "clueText": "",
+      "clueDirection": "d",
+      "clueResource": "Taylor124x124.png"
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 0,
+      "clueCol": 7
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 0,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Ndr",
+      "clueTrueLetter": "P"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 1,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Nd",
+      "clueTrueLetter": "L"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "L"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "O"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 1,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "W"
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 1,
+      "clueCol": 6
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 1,
+      "clueCol": 7
+    },
+    {
+      "clueType": "Clue-1",
+      "clueRow": 2,
+      "clueCol": 0,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 2,
+      "clueColStart": 1,
+      "clueText": "13th greek letter",
+      "clueFontSize": "n"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 1,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr",
+      "clueTrueLetter": "N"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "U"
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 2,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 2,
+      "clueColStart": 4,
+      "clueText": "__ card",
+      "clueFontSize": "n",
+      "clueDirection": "a",
+      "clueRowStart2": 2,
+      "clueColStart2": 2,
+      "clueText2": "Barters",
+      "clueFontSize2": "n",
+      "clueDirection2": "d"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr-h",
+      "clueTrueLetter": "S"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr-h",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 2,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Eld-h",
+      "clueTrueLetter": "M"
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 2,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 2,
+      "clueColStart": 6,
+      "clueText": "Cow sounding",
+      "clueFontSize": "s",
+      "clueDirection": "h",
+      "clueRowStart2": 3,
+      "clueColStart2": 7,
+      "clueText2": "Noble gas",
+      "clueFontSize2": "s",
+      "clueDirection2": "h"
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 3,
+      "clueCol": 0,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 3,
+      "clueColStart": 1,
+      "clueText": "'__ It' icecream",
+      "clueFontSize": "n",
+      "clueDirection": "h",
+      "clueRowStart2": 4,
+      "clueColStart2": 0,
+      "clueText2": "π",
+      "clueFontSize2": "n",
+      "clueDirection2": "d"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 1,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr-h",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "T"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Nd",
+      "clueTrueLetter": "S"
+    },
+    {
+      "clueType": "Image",
+      "clueRow": 3,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 3,
+      "clueColStart": 5,
+      "clueText": "",
+      "clueDirection": "a",
+      "clueResource": "fox.png"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr",
+      "clueTrueLetter": "F"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "O"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 3,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Nd",
+      "clueTrueLetter": "X"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 0,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Nd",
+      "clueTrueLetter": "P"
+    },
+    {
+      "clueType": "Clue-1",
+      "clueRow": 4,
+      "clueCol": 1,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 4,
+      "clueColStart": 2,
+      "clueText": "Do, __, Mi, Fa, Sol",
+      "clueFontSize": "n",
+      "clueDirection": "h"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr",
+      "clueTrueLetter": "R"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "E"
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 4,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 4,
+      "clueColStart": 5,
+      "clueText": "One of 10",
+      "clueFontSize": "n",
+      "clueDirection": "h",
+      "clueRowStart2": 5,
+      "clueColStart2": 4,
+      "clueText2": "Not no",
+      "clueFontSize2": "n",
+      "clueDirection2": "d"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr-h",
+      "clueTrueLetter": "T"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "O"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 4,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "E"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 5,
+      "clueCol": 0,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Sur",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 5,
+      "clueCol": 1,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "T"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 5,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "A"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 5,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "L"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 5,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Nd",
+      "clueTrueLetter": "Y"
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 5,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 5,
+      "clueColStart": 6,
+      "clueText": "Not out",
+      "clueFontSize": "n",
+      "clueDirection": "a",
+      "clueRowStart2": 6,
+      "clueColStart2": 5,
+      "clueText2": "Karate outfit",
+      "clueFontSize2": "n",
+      "clueDirection2": "d"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 5,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr-h",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 5,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "N"
+    },
+    {
+      "clueType": "Image",
+      "clueRow": 6,
+      "clueCol": 0,
+      "clueRowSpan": 2,
+      "clueColSpan": 2,
+      "clueRowStart": 0,
+      "clueColStart": 5,
+      "clueText": "",
+      "clueDirection": "a",
+      "clueResource": "Italy_Colored.png"
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 6,
+      "clueCol": 1
+    },
+    {
+      "clueType": "Clue-2",
+      "clueRow": 6,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueRowStart": 3,
+      "clueColStart": 1,
+      "clueText": "Wood in Rome",
+      "clueFontSize": "n",
+      "clueDirection": "a",
+      "clueRowStart2": 7,
+      "clueColStart2": 2,
+      "clueText2": "Allot",
+      "clueFontSize2": "n",
+      "clueDirection2": "a"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 6,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Wr-h",
+      "clueTrueLetter": "L"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 6,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "E"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 6,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Nd",
+      "clueTrueLetter": "G"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 6,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "N"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 6,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "O"
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 7,
+      "clueCol": 0
+    },
+    {
+      "clueType": "Void",
+      "clueRow": 7,
+      "clueCol": 1
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 7,
+      "clueCol": 2,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "Ndr",
+      "clueTrueLetter": "A"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 7,
+      "clueCol": 3,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "S"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 7,
+      "clueCol": 4,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "S"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 7,
+      "clueCol": 5,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "I"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 7,
+      "clueCol": 6,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "G"
+    },
+    {
+      "clueType": "Letter",
+      "clueRow": 7,
+      "clueCol": 7,
+      "clueRowSpan": 1,
+      "clueColSpan": 1,
+      "clueArrowDirection": "",
+      "clueTrueLetter": "N"
+    }
+  ]
+}
