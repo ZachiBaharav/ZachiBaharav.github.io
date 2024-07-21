@@ -5,7 +5,6 @@
     "cols": 8,
     "rows": 8,
     "name": "Italy1",
-    "imgLocation": "assets/daily/",
     "theme": "🇮🇹",
     "levelTitles": [
       "Principiante (Beginner)", 
@@ -599,7 +598,9 @@
             "AnswerColStart": 7,
             "showCorrect":false,
             "showWrong":false,
-            "ArrowDirection": "d"
+            "ArrowDirection": "d",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
           }
         ],
         "cellClasses": ""
@@ -672,7 +673,9 @@
             "AnswerColStart": 5,
             "showCorrect":false,
             "showWrong":false,
-            "ArrowDirection": "d"
+            "ArrowDirection": "d",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
           }
         ],
         "cellClasses": ""
@@ -693,7 +696,9 @@
             "AnswerColStart": 6,
             "showCorrect":false,
             "showWrong":false,
-            "ArrowDirection": "d"
+            "ArrowDirection": "d",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
           }
         ],
         "cellClasses": ""
@@ -791,7 +796,10 @@
             "AnswerColStart": 5,
             "showCorrect":false,
             "showWrong":false,
-            "ArrowDirection": "r"
+            "ArrowDirection": "r",
+            "ArrowRowOffset": 0,
+            "ArrowColOffset": 0
+
           }
         ],
         "cellClasses": ""
